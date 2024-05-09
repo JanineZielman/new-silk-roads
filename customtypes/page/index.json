@@ -18,6 +18,15 @@
           "label": "Title",
           "placeholder": ""
         }
+      },
+      "intro": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Intro",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
       }
     }
   }

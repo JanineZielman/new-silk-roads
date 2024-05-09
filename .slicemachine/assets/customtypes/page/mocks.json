@@ -1,11 +1,22 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "mistake"
+    "value": "exchange"
   },
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "harder",
+    "value": "rhythm",
     "type": "Text"
+  },
+  "intro": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading2",
+        "content": {
+          "text": "Title"
+        }
+      }
+    ]
   }
 }

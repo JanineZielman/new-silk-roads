@@ -40,13 +40,6 @@
           "thumbnails": []
         }
       },
-      "country_code": {
-        "type": "Text",
-        "config": {
-          "label": "Country Code",
-          "placeholder": ""
-        }
-      },
       "category": {
         "type": "Link",
         "config": {
@@ -55,6 +48,21 @@
           "customtypes": [
             "category"
           ]
+        }
+      },
+      "country_codes": {
+        "type": "Group",
+        "config": {
+          "label": "Country Codes",
+          "fields": {
+            "country_code": {
+              "type": "Text",
+              "config": {
+                "label": "Country Code",
+                "placeholder": ""
+              }
+            }
+          }
         }
       }
     }

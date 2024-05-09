@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "jar"
+    "value": "main"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading2",
         "content": {
-          "text": "Whistle"
+          "text": "Symbol"
         }
       }
     ]
@@ -20,7 +20,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "In ipsum exercitation elit ad voluptate. Ullamco sit excepteur eiusmod id."
+          "text": "Aliqua ea ea incididunt minim. Aliqua ex nostrud occaecat consequat est ipsum nisi incididunt veniam commodo sit velit."
         }
       }
     ]
@@ -29,27 +29,22 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
-      "width": 4380,
-      "height": 2895
+      "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+      "width": 5243,
+      "height": 3495
     },
-    "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=1%2C0%2C4379%2C2895&w=1080&h=714",
+    "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?rect=0%2C0%2C5243%2C3495&w=1080&h=720",
     "width": 1080,
-    "height": 714,
+    "height": 720,
     "edit": {
       "zoom": 1,
       "crop": {
-        "x": 1,
+        "x": 0,
         "y": 0
       },
       "background": "transparent"
     },
     "thumbnails": {}
-  },
-  "country_code": {
-    "__TYPE__": "FieldContent",
-    "value": "example",
-    "type": "Text"
   },
   "category": {
     "__TYPE__": "LinkContent",
@@ -57,5 +52,23 @@
       "__TYPE__": "DocumentLink",
       "id": "mock_document_id"
     }
+  },
+  "country_codes": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "country_code",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "tree",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
   }
 }

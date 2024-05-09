@@ -75,9 +75,40 @@ body{
 
 .container{
   max-width: 1300px;
+  padding: 0 14px;
   margin: auto;
+  margin-top: 100px;
 }
 
 .intro{
   margin-top: 48px;
+}
+
+.date{
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-top: 5px;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .row{
+    width: 31.5%;
+  }
+  .grid-item{
+    margin-bottom: 24px;
+    width: 100%;
+    border-bottom: 1px solid $black;
+    img{
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+    h2{
+      margin: 14px 0;
+    }
+  }
 }

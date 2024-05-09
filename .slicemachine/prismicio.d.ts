@@ -167,12 +167,39 @@ interface NewsItemDocumentData {
      */
     image: prismicT.ImageField<never>;
     /**
-     * Country Code field in *News Item*
+     * Country Codes field in *News Item*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.country_codes[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    country_codes: prismicT.GroupField<Simplify<NewsItemDocumentDataCountryCodesItem>>;
+    /**
+     * Content field in *News Item*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.content
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Item in News Item → Country Codes
+ *
+ */
+export interface NewsItemDocumentDataCountryCodesItem {
+    /**
+     * Country Code field in *News Item → Country Codes*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: news_item.country_code
-     * - **Tab**: Main
+     * - **API ID Path**: news_item.country_codes[].country_code
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
@@ -201,6 +228,17 @@ interface PageDocumentData {
      *
      */
     title: prismicT.KeyTextField;
+    /**
+     * Intro field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.intro
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    intro: prismicT.RichTextField;
 }
 /**
  * Page document from Prismic
@@ -248,17 +286,6 @@ interface ProjectDocumentData {
      */
     image: prismicT.ImageField<never>;
     /**
-     * Country Code field in *Project*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.country_code
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    country_code: prismicT.KeyTextField;
-    /**
      * Category field in *Project*
      *
      * - **Field Type**: Content Relationship
@@ -269,6 +296,33 @@ interface ProjectDocumentData {
      *
      */
     category: prismicT.RelationField<"category">;
+    /**
+     * Country Codes field in *Project*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.country_codes[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    country_codes: prismicT.GroupField<Simplify<ProjectDocumentDataCountryCodesItem>>;
+}
+/**
+ * Item in Project → Country Codes
+ *
+ */
+export interface ProjectDocumentDataCountryCodesItem {
+    /**
+     * Country Code field in *Project → Country Codes*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.country_codes[].country_code
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    country_code: prismicT.KeyTextField;
 }
 /**
  * Project document from Prismic
@@ -332,6 +386,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, PageDocumentData, PageDocument, ProjectDocumentData, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
+        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataCountryCodesItem, NewsItemDocument, PageDocumentData, PageDocument, ProjectDocumentData, ProjectDocumentDataCountryCodesItem, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
     }
 }

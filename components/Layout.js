@@ -1,4 +1,5 @@
 import { PrismicLink } from "@prismicio/react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const Layout = ({
@@ -6,7 +7,7 @@ export const Layout = ({
   navigation
 }) => {
   const router = useRouter();
-  console.log(router.asPath.replaceAll('/', ''))
+
   return (
     <>
       <header>
@@ -19,7 +20,7 @@ export const Layout = ({
               label = item.label;
             }
             return(
-              <div className={`menu-item ${router.asPath.replaceAll('/', '') == label.toLowerCase() ? 'active' : ''}`}>
+              <div key={`menu-item${i}`} className={`menu-item ${router.asPath.replaceAll('/', '') == label.toLowerCase() ? 'active' : ''}`}>
                 <PrismicLink field={item.link}>{item.label}</PrismicLink>
               </div>
             )
@@ -27,7 +28,7 @@ export const Layout = ({
         </div>
         <div className="right-menu">
           <div className={`menu-item ${router.asPath.replaceAll('/', '') == 'news' ? 'active' : ''}`}>
-            <a href="/news">News</a>
+            <Link href="/news">News</Link>
           </div>
         </div>
       </header>

@@ -21,7 +21,9 @@ const Page = ({ settings, page, navigation }) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className='container'>
-
+        <div className="intro">
+          <PrismicRichText field={page.data.intro}/>
+        </div>
       </div>
     </Layout>
   );

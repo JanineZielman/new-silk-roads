@@ -38,11 +38,28 @@
           "thumbnails": []
         }
       },
-      "country_code": {
-        "type": "Text",
+      "country_codes": {
+        "type": "Group",
         "config": {
-          "label": "Country Code",
-          "placeholder": ""
+          "label": "Country Codes",
+          "fields": {
+            "country_code": {
+              "type": "Text",
+              "config": {
+                "label": "Country Code",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
         }
       }
     }
