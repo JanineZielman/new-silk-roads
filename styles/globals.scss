@@ -1,0 +1,83 @@
+*{
+  box-sizing: border-box;
+}
+
+$black: rgb(0,0,0);
+$white: rgb(255,255,255);
+$grey: rgb(195,195,195);
+$blue: rgb(230,241,250);
+
+@font-face {
+  font-family: "Fakt Pro";
+  src: url("FaktPro-Reg.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Fakt Pro";
+  src: url("FaktPro-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+h2{
+  font-weight: 500;
+  font-size: 36px;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: $blue;
+  font-family: "Fakt Pro";
+}
+
+.left-menu{
+  display: flex;
+  background-color: rgb(255,255,255);
+  width: fit-content;
+  padding: 3px;
+  border-radius: 25px;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  .menu-item{
+    // margin: 0 5px;
+    padding: 3px 14px;
+    border-radius: 25px;
+    &.active{
+      background-color: $grey;
+    }
+    a{
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
+
+.right-menu{
+  width: fit-content;
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  .menu-item{
+    border-radius: 25px;
+    background-color: rgb(255,255,255);
+    padding: 6px 14px;
+    &.active{
+      background-color: $grey;
+    }
+    a{
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
+
+.container{
+  max-width: 1300px;
+  margin: auto;
+}
+
+.intro{
+  margin-top: 48px;
+}

@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
 import Collapsible from 'react-collapsible';
 
-const Index = ({ page, settings, navigation}) => {
+const Index = ({ settings, navigation}) => {
   
   return (
     <Layout navigation={navigation}>
@@ -21,9 +21,7 @@ const Index = ({ page, settings, navigation}) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container">
-        <div className="intro">
-          <PrismicRichText field={page.data.intro}/>
-        </div>
+       
       </div>
     </Layout>
   );
@@ -36,12 +34,10 @@ export async function getStaticProps({ previewData }) {
 
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
-  const page = await client.getSingle("home");
 
   return {
     props: {
       navigation,
-      page,
       settings
     },
   };

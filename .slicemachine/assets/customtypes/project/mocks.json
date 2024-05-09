@@ -1,0 +1,61 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "jar"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading2",
+        "content": {
+          "text": "Whistle"
+        }
+      }
+    ]
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "In ipsum exercitation elit ad voluptate. Ullamco sit excepteur eiusmod id."
+        }
+      }
+    ]
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+      "width": 4380,
+      "height": 2895
+    },
+    "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=1%2C0%2C4379%2C2895&w=1080&h=714",
+    "width": 1080,
+    "height": 714,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 1,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "country_code": {
+    "__TYPE__": "FieldContent",
+    "value": "example",
+    "type": "Text"
+  },
+  "category": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
+  }
+}

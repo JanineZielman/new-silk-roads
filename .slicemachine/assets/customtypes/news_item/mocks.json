@@ -1,0 +1,48 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "lovely"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading2",
+        "content": {
+          "text": "Course"
+        }
+      }
+    ]
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2021-01-21"
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+      "width": 5848,
+      "height": 3899
+    },
+    "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?rect=0%2C0%2C5848%2C3899&w=1080&h=720",
+    "width": 1080,
+    "height": 720,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "country_code": {
+    "__TYPE__": "FieldContent",
+    "value": "offer",
+    "type": "Text"
+  }
+}

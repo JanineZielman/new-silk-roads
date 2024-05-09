@@ -1,6 +1,13 @@
 {
   "_cts": {
     "page": {},
-    "settings": {}
+    "settings": {},
+    "news_item": {},
+    "project": {},
+    "category": {},
+    "home": {
+      "header_slider": {}
+    },
+    "navigation": {}
   }
 }

@@ -1,0 +1,37 @@
+{
+  "id": "home",
+  "label": "Home",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "header_slider": {
+        "type": "Group",
+        "config": {
+          "label": "Header Slider",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {
+                  "width": 1920
+                },
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "intro": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Intro",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2,strong,em,hyperlink"
+        }
+      }
+    }
+  }
+}
