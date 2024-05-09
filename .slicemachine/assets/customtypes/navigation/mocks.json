@@ -11,7 +11,7 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "http://twitter.com"
+                "url": "http://google.com"
               }
             }
           ],
@@ -19,11 +19,22 @@
             "label",
             {
               "__TYPE__": "FieldContent",
-              "value": "beneath",
+              "value": "leg",
               "type": "Text"
             }
           ]
         ]
+      }
+    ]
+  },
+  "footer": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Tempor aliqua est nulla deserunt deserunt ea ea ea qui reprehenderit consectetur. Esse sit nisi excepteur non exercitation cupidatat officia."
+        }
       }
     ]
   }

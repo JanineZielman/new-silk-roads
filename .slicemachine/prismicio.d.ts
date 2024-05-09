@@ -105,6 +105,17 @@ interface NavigationDocumentData {
      *
      */
     menu: prismicT.GroupField<Simplify<NavigationDocumentDataMenuItem>>;
+    /**
+     * Footer field in *Navigation*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation.footer
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    footer: prismicT.RichTextField;
 }
 /**
  * Item in Navigation → Menu

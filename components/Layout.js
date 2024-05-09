@@ -1,4 +1,4 @@
-import { PrismicLink } from "@prismicio/react";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -35,6 +35,11 @@ export const Layout = ({
       <main className="wrapper">
         {children}
       </main>
+      <footer>
+        <div className="footer-content">
+          <PrismicRichText field={navigation.data.footer}/>
+        </div>
+      </footer>
     </>
   );
 };
