@@ -20,7 +20,7 @@ const Page = ({ settings, page, navigation }) => {
         <meta property="og:description" content={settings.data.site_description[0].text} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
-      <div className='container'>
+      <div className='container page'>
         <div className="intro">
           <PrismicRichText field={page.data.intro}/>
         </div>

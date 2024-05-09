@@ -5,6 +5,14 @@
   "status": true,
   "json": {
     "Main": {
+      "hero": {
+        "type": "Link",
+        "config": {
+          "label": "Hero",
+          "placeholder": "",
+          "select": "media"
+        }
+      },
       "header_slider": {
         "type": "Group",
         "config": {

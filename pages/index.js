@@ -20,6 +20,11 @@ const Index = ({ page, settings, navigation}) => {
         <meta property="og:description" content={settings.data.site_description[0].text} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
+      <div className="hero">
+        <video muted autoPlay loop playsInline>
+          <source src={page.data.hero?.url} type="video/mp4"/>
+        </video>
+      </div>
       <div className="container">
         <div className="intro">
           <PrismicRichText field={page.data.intro}/>

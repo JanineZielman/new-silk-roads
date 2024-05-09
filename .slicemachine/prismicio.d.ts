@@ -33,6 +33,17 @@ export type CategoryDocument<Lang extends string = string> = prismicT.PrismicDoc
 /** Content for Home documents */
 interface HomeDocumentData {
     /**
+     * Hero field in *Home*
+     *
+     * - **Field Type**: Link to Media
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.hero
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    hero: prismicT.LinkToMediaField;
+    /**
      * Header Slider field in *Home*
      *
      * - **Field Type**: Group

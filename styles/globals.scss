@@ -77,11 +77,29 @@ body{
   max-width: 1300px;
   padding: 0 14px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 48px;
+  &.page{
+    margin-top: 100px;
+  }
+}
+
+.hero{
+  width: 100vw;
+  height: 100vh;
+  video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 .intro{
-  margin-top: 48px;
+  // margin-top: 48px;
+  h2{
+    margin-top: 0;
+  }
 }
 
 .date{
@@ -94,6 +112,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 100px;
   .row{
     width: 31.5%;
   }

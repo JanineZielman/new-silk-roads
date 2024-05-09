@@ -1,4 +1,15 @@
 {
+  "hero": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "id": "mock_Media_link",
+      "kind": "image/jpeg",
+      "name": "mock_name",
+      "url": "https://source.unsplash.com/daily",
+      "size": "0",
+      "__TYPE__": "FileLink"
+    }
+  },
   "header_slider": {
     "__TYPE__": "GroupContentType",
     "value": [
@@ -11,17 +22,17 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
-                "width": 3500,
-                "height": 2338
+                "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+                "width": 3456,
+                "height": 3456
               },
-              "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?rect=1%2C0%2C3499%2C2338&w=1920&h=1283",
+              "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?rect=0%2C0%2C3456%2C3456&w=1920&h=1920",
               "width": 1920,
-              "height": 1283,
+              "height": 1920,
               "edit": {
                 "zoom": 1,
                 "crop": {
-                  "x": 1,
+                  "x": 0,
                   "y": 0
                 },
                 "background": "transparent"
@@ -39,7 +50,7 @@
       {
         "type": "heading2",
         "content": {
-          "text": "Particular"
+          "text": "Range"
         }
       }
     ]
