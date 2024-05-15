@@ -9,6 +9,17 @@ import { PrismicNextImage } from "@prismicio/next";
 import Collapsible from 'react-collapsible';
 
 const Index = ({ page, settings, navigation}) => {
+  console.log(page)
+  var sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 0,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
+  };
   
   return (
     <Layout navigation={navigation}>
@@ -21,9 +32,18 @@ const Index = ({ page, settings, navigation}) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="hero">
-        <video muted autoPlay loop playsInline>
-          <source src={page.data.hero?.url} type="video/mp4"/>
-        </video>
+        <div className="spinning-logo">
+          <h1>{settings.data.site_title}  &nbsp; {settings.data.site_title}</h1>
+        </div>
+        <div className="images">
+          <Slider {...sliderSettings}>
+            {page.data.header_slider.map((item, i) => {
+              return(
+              <PrismicNextImage key={`img-slide${i}`} field={item.image}/>
+              )
+            })}
+          </Slider>
+        </div>
       </div>
       <div className="container">
         <div className="intro">
