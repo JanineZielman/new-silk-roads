@@ -6,9 +6,10 @@ import { Layout } from "../components/Layout";
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
 import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
-import Collapsible from 'react-collapsible';
+import { Portfolio } from "../components/Portfolio";
+import { News } from "../components/News";
 
-const Index = ({ page, settings, navigation}) => {
+const Index = ({ page, settings, navigation, portfolio_items, news_items}) => {
   console.log(page)
   var sliderSettings = {
     dots: false,
@@ -49,6 +50,20 @@ const Index = ({ page, settings, navigation}) => {
         <div className="intro">
           <PrismicRichText field={page.data.intro}/>
         </div>
+        <div className="preview">
+          <div className="preview-bar">
+            <div className="subtitle">PORTFOLIO</div>
+            <div className="read-more-button">Explore our portfolio</div>
+          </div>
+          <Portfolio items={portfolio_items.slice(0,6)}/>
+        </div>
+        <div className="preview">
+          <div className="preview-bar">
+            <div className="subtitle">NEWS</div>
+            <div className="read-more-button">Read all news</div>
+          </div>
+          <News items={news_items.slice(0,6)}/>
+        </div>
       </div>
     </Layout>
   );
@@ -62,12 +77,16 @@ export async function getStaticProps({ previewData }) {
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
   const page = await client.getSingle("home");
+  const portfolio_items = await client.getAllByType("project");
+  const news_items = await client.getAllByType("news_item");
 
   return {
     props: {
       navigation,
       page,
-      settings
+      settings,
+      portfolio_items,
+      news_items
     },
   };
 }

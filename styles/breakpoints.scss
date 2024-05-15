@@ -1,3 +1,38 @@
 @media only screen and (max-width: 600px) {
- 
+  body{
+    font-size: 14px;
+  }
+  p{
+    font-size: 16px;
+  }
+  .left-menu{
+    left: 10px;
+    .menu-item{
+      padding: 3px 10px;
+    }
+  }
+  .right-menu{
+    right: 10px;
+    .menu-item{
+      padding: 6px 10px;
+    }
+  }
+  h2{
+    font-size: 28px;
+  }
+  .hero{
+    .spinning-logo{
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  }
+  .grid{
+    .row{
+      width: 100%;
+    }
+  }
+ footer{
+  h2{
+    font-size: 32px;
+  }
+ }
 }
