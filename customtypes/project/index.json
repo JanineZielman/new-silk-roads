@@ -37,17 +37,31 @@
           "constraint": {
             "width": 1080
           },
-          "thumbnails": []
+          "thumbnails": [
+            {
+              "name": "full",
+              "width": 1920,
+              "height": null
+            }
+          ]
         }
       },
-      "category": {
-        "type": "Link",
+      "categories": {
+        "type": "Group",
         "config": {
-          "label": "Category",
-          "select": "document",
-          "customtypes": [
-            "category"
-          ]
+          "label": "Categories",
+          "fields": {
+            "category": {
+              "type": "Link",
+              "config": {
+                "label": "Category",
+                "select": "document",
+                "customtypes": [
+                  "category"
+                ]
+              }
+            }
+          }
         }
       },
       "country_codes": {

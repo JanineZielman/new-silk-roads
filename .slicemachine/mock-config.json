@@ -3,7 +3,9 @@
     "page": {},
     "settings": {},
     "news_item": {},
-    "project": {},
+    "project": {
+      "categories": {}
+    },
     "category": {},
     "home": {
       "header_slider": {}

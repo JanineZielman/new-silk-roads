@@ -11,7 +11,7 @@ export const News = ({
         {items.map((item, i) => { 
           return(
             i % 3 === 0 &&
-            <div className="grid-item">
+            <div className="grid-item" key={`news1-${i}`}>
               <img src={item.data.image.url}/>
               {item.data.date &&
                 <div className="date">
@@ -27,7 +27,7 @@ export const News = ({
         {items.map((item, i) => { 
           return(
             i % 3 === 1 &&
-            <div className="grid-item">
+            <div className="grid-item" key={`news2-${i}`}>
               <img src={item.data.image.url}/>
               {item.data.date &&
                 <div className="date">
@@ -43,7 +43,7 @@ export const News = ({
         {items.map((item, i) => { 
           return(
             i % 3 === 2 &&
-            <div className="grid-item">
+            <div className="grid-item" key={`news3-${i}`}>
               <img src={item.data.image.url}/>
               {item.data.date &&
                 <div className="date">

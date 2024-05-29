@@ -1,5 +1,4 @@
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const Layout = ({
@@ -11,7 +10,7 @@ export const Layout = ({
   return (
     <>
       <header>
-        <div className="left-menu">
+        <div className="menu">
           {navigation.data.menu.map((item, i) => {
             let label;
             if (item.label == 'Home'){
@@ -25,11 +24,6 @@ export const Layout = ({
               </div>
             )
           })}
-        </div>
-        <div className="right-menu">
-          <div className={`menu-item ${router.asPath.replaceAll('/', '') == 'news' ? 'active' : ''}`}>
-            <Link href="/news">News</Link>
-          </div>
         </div>
       </header>
       <main className="wrapper">

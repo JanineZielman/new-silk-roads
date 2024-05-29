@@ -1,14 +1,14 @@
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 
-import { createClient } from "../prismicio";
-import { Layout } from "../components/Layout";
+import { createClient } from "../../prismicio";
+import { Layout } from "../../components/Layout";
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import { Portfolio } from "../components/Portfolio";
+import { Portfolio } from "../../components/Portfolio";
 
 const Index = ({ settings, navigation, items}) => {
-  console.log(items)
+
   return (
     <Layout navigation={navigation}>
       <Head>

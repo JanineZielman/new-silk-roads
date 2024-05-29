@@ -5,7 +5,64 @@
 $black: rgb(0,0,0);
 $white: rgb(255,255,255);
 $grey: rgb(195,195,195);
-$blue: rgb(230,241,250);
+$lblue: rgb(230,241,250);
+
+$purple: #d468c9d0;
+$orange: #fe8946d0;
+$green: #81c584d0;
+$purple2: #b595ffd0;
+$brown: #c6a67fd0;
+$red:#ff7765d0;
+$blue: #649dffd0;
+
+.gradient{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(0deg, $green 0%, #649dff63 75%);
+  &.gradient2{
+    right: 0;
+    left: auto;
+  }
+}
+
+.facilitation-1{
+  background: linear-gradient(0deg, $red 0%, #649dff63 75%);
+}
+
+.facilitation-2{
+  background: linear-gradient(-90deg, $brown 0%, #649dff63 75%);
+}
+
+
+.business-development-1{
+  background: linear-gradient(0deg, $purple 0%, #649dff63 75%);
+}
+
+.business-development-2{
+  background: linear-gradient(-90deg, $green 0%, #649dff63 75%);
+}
+
+.strategy-1{
+  background: linear-gradient(0deg, $purple2 0%, #649dff63 75%);
+}
+
+.strategy-2{
+  background: linear-gradient(-90deg, $purple 0%, #649dff63 75%);
+}
+
+.learning-1{
+  background: linear-gradient(0deg, $green 0%, #649dff63 75%);
+}
+
+.learning-2{
+  background: linear-gradient(-90deg, $orange 0%, #649dff63 75%);
+}
+
+
+
 
 @font-face {
   font-family: "Fakt Pro";
@@ -29,14 +86,19 @@ p{
   line-height: 1.3;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 body{
   margin: 0;
   padding: 0;
-  background-color: $blue;
+  background-color: $lblue;
   font-family: "Fakt Pro";
 }
 
-.left-menu{
+.menu{
   display: flex;
   background-color: rgb(255,255,255);
   width: fit-content;
@@ -45,7 +107,7 @@ body{
   position: fixed;
   z-index: 999;
   top: 14px;
-  left: 14px;
+  left: 24px;
   .menu-item{
     // margin: 0 5px;
     padding: 3px 14px;
@@ -60,29 +122,9 @@ body{
   }
 }
 
-.right-menu{
-  width: fit-content;
-  position: fixed;
-  z-index: 999;
-  top: 14px;
-  right: 14px;
-  .menu-item{
-    border-radius: 25px;
-    background-color: rgb(255,255,255);
-    padding: 6px 14px;
-    &.active{
-      background-color: $grey;
-    }
-    a{
-      text-decoration: none;
-      color: $black;
-    }
-  }
-}
-
 .container{
   max-width: 1300px;
-  padding: 0 14px;
+  padding: 0 24px;
   margin: auto;
   margin-top: 48px;
   &.page{
@@ -118,9 +160,15 @@ body{
   .images{
     position: absolute;
     width: 100vw;
+    height: 100vh;
     z-index: -1;
+    div{
+      height: 100vh;
+    }
     .slick-slide{
       img{
+        width: 100vw;
+        height: 100vh;
         object-fit: cover;
       }
     }
@@ -165,11 +213,17 @@ body{
     width: 100%;
     border-bottom: 1px solid $black;
     position: relative;
+    overflow: hidden;
+    .img-wrapper{
+      height: fit-content;
+      position: relative;
+    }
     img{
       width: 100%;
       height: auto;
       aspect-ratio: 3/2;
       object-fit: cover;
+      margin-bottom: -5px;
     }
     h2{
       margin: 10px 0;
@@ -216,7 +270,7 @@ footer{
   .footer-content{
     max-width: 1300px;
     margin: auto;
-    padding: 14px;
+    padding: 24px;
   }
   h2{
     font-size: 52px;
@@ -229,4 +283,48 @@ footer{
   p{
     line-height: 1.5;
   }
+}
+
+
+.hero.page-hero{
+  .countries{
+    transform: scale(1.3);
+    transform-origin: top right;
+    right: 24px;
+    top: 50px;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.category{
+  text-transform: capitalize;
+  background-color: $black;
+  color: $white;
+  width: fit-content;
+  padding: 5px 20px;
+  border-radius: 25px;
+}
+
+
+.project{
+  display: flex;
+  p{
+    font-size: 24px;
+  }
+  .content-right{
+    width: 70%;
+  }
+  .content-left{
+    width: 30%;
+  }
+  h2{
+    font-size: 80px;
+    word-wrap: break-word;
+    margin: 10px 0 24px 0;
+  }
+  padding-bottom: 100px;
 }

@@ -295,18 +295,18 @@ interface ProjectDocumentData {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    image: prismicT.ImageField<never>;
+    image: prismicT.ImageField<"full">;
     /**
-     * Category field in *Project*
+     * Categories field in *Project*
      *
-     * - **Field Type**: Content Relationship
+     * - **Field Type**: Group
      * - **Placeholder**: *None*
-     * - **API ID Path**: project.category
+     * - **API ID Path**: project.categories[]
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
      *
      */
-    category: prismicT.RelationField<"category">;
+    categories: prismicT.GroupField<Simplify<ProjectDocumentDataCategoriesItem>>;
     /**
      * Country Codes field in *Project*
      *
@@ -318,6 +318,22 @@ interface ProjectDocumentData {
      *
      */
     country_codes: prismicT.GroupField<Simplify<ProjectDocumentDataCountryCodesItem>>;
+}
+/**
+ * Item in Project → Categories
+ *
+ */
+export interface ProjectDocumentDataCategoriesItem {
+    /**
+     * Category field in *Project → Categories*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.categories[].category
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField<"category">;
 }
 /**
  * Item in Project → Country Codes
@@ -397,6 +413,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataCountryCodesItem, NewsItemDocument, PageDocumentData, PageDocument, ProjectDocumentData, ProjectDocumentDataCountryCodesItem, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
+        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataCountryCodesItem, NewsItemDocument, PageDocumentData, PageDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
     }
 }
