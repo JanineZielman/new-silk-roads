@@ -24,6 +24,7 @@ const Page = ({ settings, page, navigation }) => {
         <div className="intro">
           <PrismicRichText field={page.data.intro}/>
         </div>
+        <SliceZone slices={page.data.slices} components={components} />
       </div>
     </Layout>
   );

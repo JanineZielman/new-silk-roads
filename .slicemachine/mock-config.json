@@ -17,6 +17,12 @@
       "default": {
         "primary": {}
       }
+    },
+    "People": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

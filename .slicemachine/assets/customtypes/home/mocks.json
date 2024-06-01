@@ -11,13 +11,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
-                "width": 3648,
-                "height": 4560
+                "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+                "width": 5616,
+                "height": 3744
               },
-              "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?rect=0%2C0%2C3648%2C4560&w=1920&h=2400",
+              "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?rect=0%2C0%2C5616%2C3744&w=1920&h=1280",
               "width": 1920,
-              "height": 2400,
+              "height": 1280,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -39,7 +39,44 @@
       {
         "type": "heading2",
         "content": {
-          "text": "Purple"
+          "text": "Electric"
+        }
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "text_section$e6d2ee2e-8959-4ff7-9eff-19b02b701461",
+        "name": "text_section",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "FieldContent",
+              "value": "officer",
+              "type": "Text"
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Qui aliquip quis excepteur velit cillum. Adipisicing culpa amet laboris ex exercitation adipisicing exercitation occaecat non. Nostrud exercitation Lorem voluptate id laborum duis anim eiusmod nostrud veniam occaecat deserunt laboris."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
         }
       }
     ]

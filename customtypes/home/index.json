@@ -31,6 +31,17 @@
           "allowTargetBlank": true,
           "multi": "heading2,strong,em,hyperlink"
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text_section": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

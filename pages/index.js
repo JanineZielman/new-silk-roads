@@ -3,7 +3,8 @@ import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-import { PrismicRichText, PrismicLink } from "@prismicio/react";
+import { PrismicRichText, PrismicLink, SliceZone } from "@prismicio/react";
+import { components } from "../slices";
 import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
 import { Portfolio } from "../components/Portfolio";
@@ -51,6 +52,7 @@ const Index = ({ page, settings, navigation, portfolio_items, news_items}) => {
         <div className="intro">
           <PrismicRichText field={page.data.intro}/>
         </div>
+        <SliceZone slices={page.data.slices} components={components} />
         <div className="preview">
           <div className="preview-bar">
             <div className="subtitle">PORTFOLIO</div>

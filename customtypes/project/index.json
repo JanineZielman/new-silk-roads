@@ -78,6 +78,17 @@
             }
           }
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text_section": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

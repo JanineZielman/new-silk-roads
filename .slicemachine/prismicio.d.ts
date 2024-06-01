@@ -54,6 +54,17 @@ interface HomeDocumentData {
      *
      */
     intro: prismicT.RichTextField;
+    /**
+     * Slice Zone field in *Home*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<HomeDocumentDataSlicesSlice>;
 }
 /**
  * Item in Home → Header Slider
@@ -71,6 +82,11 @@ export interface HomeDocumentDataHeaderSliderItem {
      */
     image: prismicT.ImageField<never>;
 }
+/**
+ * Slice for *Home → Slice Zone*
+ *
+ */
+type HomeDocumentDataSlicesSlice = TextSectionSlice;
 /**
  * Home document from Prismic
  *
@@ -178,17 +194,6 @@ interface NewsItemDocumentData {
      */
     image: prismicT.ImageField<never>;
     /**
-     * Country Codes field in *News Item*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: news_item.country_codes[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    country_codes: prismicT.GroupField<Simplify<NewsItemDocumentDataCountryCodesItem>>;
-    /**
      * Content field in *News Item*
      *
      * - **Field Type**: Rich Text
@@ -199,22 +204,6 @@ interface NewsItemDocumentData {
      *
      */
     content: prismicT.RichTextField;
-}
-/**
- * Item in News Item → Country Codes
- *
- */
-export interface NewsItemDocumentDataCountryCodesItem {
-    /**
-     * Country Code field in *News Item → Country Codes*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: news_item.country_codes[].country_code
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    country_code: prismicT.KeyTextField;
 }
 /**
  * News Item document from Prismic
@@ -250,7 +239,23 @@ interface PageDocumentData {
      *
      */
     intro: prismicT.RichTextField;
+    /**
+     * Slice Zone field in *Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = TextSectionSlice | PeopleSlice;
 /**
  * Page document from Prismic
  *
@@ -318,6 +323,17 @@ interface ProjectDocumentData {
      *
      */
     country_codes: prismicT.GroupField<Simplify<ProjectDocumentDataCountryCodesItem>>;
+    /**
+     * Slice Zone field in *Project*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ProjectDocumentDataSlicesSlice>;
 }
 /**
  * Item in Project → Categories
@@ -351,6 +367,11 @@ export interface ProjectDocumentDataCountryCodesItem {
      */
     country_code: prismicT.KeyTextField;
 }
+/**
+ * Slice for *Project → Slice Zone*
+ *
+ */
+type ProjectDocumentDataSlicesSlice = TextSectionSlice;
 /**
  * Project document from Prismic
  *
@@ -409,6 +430,65 @@ interface SettingsDocumentData {
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = CategoryDocument | HomeDocument | NavigationDocument | NewsItemDocument | PageDocument | ProjectDocument | SettingsDocument;
 /**
+ * Item in People → Items
+ *
+ */
+export interface PeopleSliceDefaultItem {
+    /**
+     * Image field in *People → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: people.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Role field in *People → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: people.items[].role
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    role: prismicT.KeyTextField;
+    /**
+     * Name field in *People → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: people.items[].name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+}
+/**
+ * Default variation for People Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `People`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PeopleSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<PeopleSliceDefaultItem>>;
+/**
+ * Slice variation for *People*
+ *
+ */
+type PeopleSliceVariation = PeopleSliceDefault;
+/**
+ * People Shared Slice
+ *
+ * - **API ID**: `people`
+ * - **Description**: `People`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PeopleSlice = prismicT.SharedSlice<"people", PeopleSliceVariation>;
+/**
  * Primary content in TextSection → Primary
  *
  */
@@ -462,6 +542,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataCountryCodesItem, NewsItemDocument, PageDocumentData, PageDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
+        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataSlicesSlice, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
     }
 }

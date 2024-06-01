@@ -9,7 +9,7 @@
     font-size: 16px;
   }
   .menu{
-    left: 10px;
+    left: 14px;
     .menu-item{
       padding: 3px 8px;
     }
@@ -26,6 +26,20 @@
     .row{
       width: 100%;
     }
+  }
+
+  .project{
+    flex-direction: column;
+    h2{
+      font-size: 32px;
+    }
+    .content-left, .content-right{
+      width: 100%;
+    }
+  }
+
+  .hero.page-hero{
+    height: 50vh;
   }
 
   .news-preview{
@@ -45,6 +59,28 @@
       }
     }
   }
+
+  .text-section{
+    flex-direction: column;
+    .description{
+      width: 100%;
+      p{
+        font-size: 16px;
+      }
+    }
+  }
+  .news-page h2{
+    font-size: 32px;
+  }
+
+.people-section{
+  flex-direction: column;
+  .people{
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 24px;
+  }
+}
 
  footer{
   h2{
