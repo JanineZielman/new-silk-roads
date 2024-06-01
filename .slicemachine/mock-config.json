@@ -11,5 +11,12 @@
       "header_slider": {}
     },
     "navigation": {}
+  },
+  "slices": {
+    "TextSection": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

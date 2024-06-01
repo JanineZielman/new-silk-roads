@@ -1,4 +1,5 @@
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
+import Link from "next/link";
 
 export const Portfolio = ({
   items
@@ -12,7 +13,7 @@ export const Portfolio = ({
             let categories = item.data.categories
             return(
               i % 3 === 0 &&
-              <a href={`/portfolio/${item.uid}`}>
+              <Link href={`/portfolio/${item.uid}`}>
                 <div className="grid-item">
                   <div className="countries">
                     {item.data.country_codes.map((code, j) => {
@@ -34,7 +35,7 @@ export const Portfolio = ({
                   <PrismicRichText field={item.data.title}/>
                   <PrismicRichText field={item.data.description}/>
                 </div>
-              </a>
+              </Link>
             )
           })}
         </div>
@@ -43,7 +44,7 @@ export const Portfolio = ({
             let categories = item.data.categories
             return(
               i % 3 === 1 &&
-              <a href={`/portfolio/${item.uid}`}>
+              <Link href={`/portfolio/${item.uid}`}>
                 <div className="grid-item">
                   <div className="countries">
                     {item.data.country_codes.map((code, j) => {
@@ -65,7 +66,7 @@ export const Portfolio = ({
                   <PrismicRichText field={item.data.title}/>
                   <PrismicRichText field={item.data.description}/>
                 </div>
-              </a>
+              </Link>
             )
           })}
         </div>
@@ -74,7 +75,7 @@ export const Portfolio = ({
             let categories = item.data.categories
             return(
               i % 3 === 2 &&
-              <a href={`/portfolio/${item.uid}`}>
+              <Link href={`/portfolio/${item.uid}`}>
                 <div className="grid-item">
                     <div className="countries">
                     {item.data.country_codes.map((code, j) => {
@@ -96,7 +97,7 @@ export const Portfolio = ({
                   <PrismicRichText field={item.data.title}/>
                   <PrismicRichText field={item.data.description}/>
                 </div>
-              </a>
+              </Link>
             )
           })}
         </div>
