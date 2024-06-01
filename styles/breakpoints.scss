@@ -2,17 +2,20 @@
   body{
     font-size: 14px;
   }
+  .container.page{
+    margin-top: 70px;
+  }
   p{
     font-size: 16px;
   }
   .menu{
     left: 10px;
     .menu-item{
-      padding: 3px 10px;
+      padding: 3px 8px;
     }
   }
   h2{
-    font-size: 28px;
+    font-size: 24px;
   }
   .hero{
     .spinning-logo{
@@ -24,6 +27,25 @@
       width: 100%;
     }
   }
+
+  .news-preview{
+    .grid-item{
+      flex-direction: column;
+      img{
+        width: 100%;
+        margin-right: 0;
+      }
+      .info{
+        width: 100%;
+        margin-left: 0;
+      }
+      h2{
+        font-size: 32px;
+        word-wrap: break-word;
+      }
+    }
+  }
+
  footer{
   h2{
     font-size: 32px;
