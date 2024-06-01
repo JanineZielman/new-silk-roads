@@ -7,7 +7,7 @@ import { PrismicRichText, PrismicLink } from "@prismicio/react";
 import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
 import { Portfolio } from "../components/Portfolio";
-import { News } from "../components/News";
+import { NewsPreview } from "../components/NewsPreview";
 
 const Index = ({ page, settings, navigation, portfolio_items, news_items}) => {
   console.log(page)
@@ -53,16 +53,16 @@ const Index = ({ page, settings, navigation, portfolio_items, news_items}) => {
         <div className="preview">
           <div className="preview-bar">
             <div className="subtitle">PORTFOLIO</div>
-            <div className="read-more-button">Explore our portfolio</div>
+            <a className="read-more-button" href="/portfolio">Explore our portfolio</a>
           </div>
           <Portfolio items={portfolio_items.slice(0,6)}/>
         </div>
         <div className="preview">
           <div className="preview-bar">
             <div className="subtitle">NEWS</div>
-            <div className="read-more-button">Read all news</div>
+            <a className="read-more-button" href="/news">Read all news</a>
           </div>
-          <News items={news_items.slice(0,6)}/>
+          <NewsPreview items={news_items.slice(0,3)}/>
         </div>
       </div>
     </Layout>

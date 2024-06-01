@@ -211,7 +211,7 @@ body{
   .grid-item{
     margin-bottom: 24px;
     width: 100%;
-    border-bottom: 1px solid $black;
+    border-bottom: 1.5px solid $black;
     position: relative;
     overflow: hidden;
     .img-wrapper{
@@ -230,6 +230,44 @@ body{
     }
     p{
       margin-top: 0;
+    }
+  }
+}
+
+.news-preview{
+  .grid-item{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    margin: 36px 0;
+    img{
+      width: 50%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      margin-right: 24px;
+    }
+    h2{
+      font-size: 52px;
+      margin: 10px 0;
+    }
+    .info{
+      width: 50%;
+      margin-left: 24px;
+      border-bottom: 1.5px solid $black;
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        mask-image: url(./NSR_Arrow-r.svg);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+        background-color: $black;
+        right: 0px;
+        bottom: 10px;
+      }
     }
   }
 }
@@ -342,4 +380,17 @@ footer{
     margin: 10px 0 24px 0;
   }
   padding-bottom: 100px;
+}
+
+.news-page{
+  max-width: 900px;
+  img.main{
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+  h2{
+    font-size: 52px;
+    margin: 10px 0;
+  }
 }
