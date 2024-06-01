@@ -4,14 +4,18 @@
   }
   .container.page{
     margin-top: 70px;
+    padding-bottom: 100px;
   }
   p{
     font-size: 16px;
   }
   .menu{
     left: 14px;
+    top: 14px;
+    padding: 3px;
     .menu-item{
-      padding: 3px 8px;
+      padding: 3px 10px;
+      margin: 0;
     }
   }
   h2{
@@ -69,8 +73,12 @@
       }
     }
   }
-  .news-page h2{
-    font-size: 32px;
+  .news-page {   
+    margin-top: 70px;
+    padding-bottom: 100px;
+    h2{
+      font-size: 32px;
+    }
   }
 
 .people-section{
