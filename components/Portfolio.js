@@ -24,8 +24,8 @@ export const Portfolio = ({
                   </div>
                   <div className="img-wrapper">
                     <img src={item.data.image.url}/>
-                    <div className={`gradient ${categories.map((item, i) => item.category.uid)}-1`}></div>
-                    <div className={`gradient gradient2 ${categories.map((item, i) => item.category.uid)}-2`}></div>
+                    <div className={`gradient ${categories.map((item, i) => item.category.uid)} ${categories.map((item, i) => item.category.uid)}-1`}></div>
+                    <div className={`gradient gradient2 ${categories.map((item, i) => item.category.uid)} ${categories.map((item, i) => item.category.uid)}-2`}></div>
                   </div>
                   {item.data.date &&
                     <div className="date">
@@ -76,7 +76,7 @@ export const Portfolio = ({
             return(
               i % 3 === 2 &&
               <Link href={`/portfolio/${item.uid}`}>
-                <div className="grid-item">
+                <div className={`grid-item ${categories.map((item, i) => item.category.uid)}`}>
                     <div className="countries">
                     {item.data.country_codes.map((code, j) => {
                       return(

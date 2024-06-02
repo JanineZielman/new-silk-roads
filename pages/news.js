@@ -19,6 +19,7 @@ const Index = ({ settings, navigation, items}) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container">
+        <h2 className="page-title">New Silk Roads latest news</h2>
         <News items={items}/>
       </div>
     </Layout>

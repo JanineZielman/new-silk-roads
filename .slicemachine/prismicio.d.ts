@@ -430,6 +430,22 @@ interface SettingsDocumentData {
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = CategoryDocument | HomeDocument | NavigationDocument | NewsItemDocument | PageDocument | ProjectDocument | SettingsDocument;
 /**
+ * Primary content in People → Primary
+ *
+ */
+interface PeopleSliceDefaultPrimary {
+    /**
+     * Title field in *People → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: people.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
  * Item in People → Items
  *
  */
@@ -473,7 +489,7 @@ export interface PeopleSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type PeopleSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<PeopleSliceDefaultItem>>;
+export type PeopleSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PeopleSliceDefaultPrimary>, Simplify<PeopleSliceDefaultItem>>;
 /**
  * Slice variation for *People*
  *
@@ -542,6 +558,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataSlicesSlice, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
+        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataSlicesSlice, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, PeopleSliceDefaultPrimary, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
     }
 }

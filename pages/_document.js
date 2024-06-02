@@ -11,6 +11,8 @@ export default function Document() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fff"/>
         <meta name="msapplication-TileColor" content="#fff"/>
         <meta name="theme-color" content="#ffffff"></meta> */}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" defer/>
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" defer/>
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />
