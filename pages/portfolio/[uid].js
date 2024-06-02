@@ -34,9 +34,6 @@ const Page = ({ settings, page, navigation }) => {
         </div>
       </div>
       <div className='container project'>
-      <div className="content-left">
-          
-        </div>
         <div className="content-right">
           <div className="categories">
             {categories.map((item, i) => {
@@ -48,6 +45,7 @@ const Page = ({ settings, page, navigation }) => {
           <PrismicRichText field={page.data.title}/>
           <PrismicRichText field={page.data.description}/>
         </div>
+        <SliceZone slices={page.data.slices} components={components} />
       </div>
     </Layout>
   );

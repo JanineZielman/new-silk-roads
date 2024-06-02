@@ -37,8 +37,16 @@
     h2{
       font-size: 32px;
     }
-    .content-left, .content-right{
+    .content-right{
       width: 100%;
+      margin-left: 0;
+    }
+    .text-section{
+      .description{
+        a{
+          font-size: 14px;
+        }
+      }
     }
   }
 
