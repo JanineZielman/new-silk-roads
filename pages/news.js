@@ -20,6 +20,7 @@ const Index = ({ settings, navigation, items}) => {
       </Head>
       <div className="container">
         <h2 className="page-title">New Silk Roads latest news</h2>
+        <br/>
         <News items={items}/>
       </div>
     </Layout>

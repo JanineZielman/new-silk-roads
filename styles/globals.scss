@@ -28,70 +28,103 @@ $blue: #649dffd0;
   }
 }
 
-.facilitation-1, .people:nth-child(8n + 1) .gradient{
+.facilitation-1{
   background: linear-gradient(0deg, $red 0%, #649dff63 75%);
 }
 
-.facilitation-2,  .people:nth-child(8n + 1) .gradient2{
+.facilitation-2{
   background: linear-gradient(-90deg, $brown 0%, #649dff63 75%);
 }
 
-
-.business-development-1,  .people:nth-child(8n + 2) .gradient{
+.business-development-1{
   background: linear-gradient(0deg, $purple 0%, #649dff63 75%);
 }
 
-.business-development-2, .people:nth-child(8n + 2) .gradient2{
+.business-development-2{
   background: linear-gradient(-90deg, $green 0%, #649dff63 75%);
 }
 
-.strategy-1,  .people:nth-child(8n + 3) .gradient{
+.strategy-1{
   background: linear-gradient(0deg, $purple2 0%, #649dff63 75%);
 }
 
-.strategy-2, .people:nth-child(8n + 3) .gradient2{
+.strategy-2{
   background: linear-gradient(-90deg, $purple 0%, #649dff63 75%);
 }
 
-.learning-1,  .people:nth-child(8n + 4) .gradient{
+.learning-1{
   background: linear-gradient(0deg, $green 0%, #649dff63 75%);
 }
 
-.learning-2, .people:nth-child(8n + 4) .gradient2{
+.learning-2{
   background: linear-gradient(-90deg, $orange 0%, #649dff63 75%);
 }
 
 
+
+.people:nth-child(8n + 1) .gradient{
+  background: linear-gradient(90deg, $red 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 1) .gradient2{
+  background: linear-gradient(-90deg, $brown 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 2) .gradient{
+  background: linear-gradient(90deg, $purple 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 2) .gradient2{
+  background: linear-gradient(-90deg, $green 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 3) .gradient{
+  background: linear-gradient(90deg, $purple2 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 3) .gradient2{
+  background: linear-gradient(-90deg, $purple 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 4) .gradient{
+  background: linear-gradient(90deg, $green 0%, rgba(255,255,255,0) 75%);
+}
+
+.people:nth-child(8n + 4) .gradient2{
+  background: linear-gradient(-90deg, $orange 0%, rgba(255,255,255,0) 75%);
+}
+
+
 .people:nth-child(8n + 5) .gradient{
-  background: linear-gradient(0deg, $blue 0%, #649dff63 75%);
+  background: linear-gradient(90deg, $blue 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 5) .gradient2{
-  background: linear-gradient(-90deg, $green 0%, #649dff63 75%);
+  background: linear-gradient(-90deg, $green 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 6) .gradient{
-  background: linear-gradient(0deg, $purple 0%, #649dff63 75%);
+  background: linear-gradient(90deg, $purple 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 6) .gradient2{
-  background: linear-gradient(-90deg, $brown 0%, #649dff63 75%);
+  background: linear-gradient(-90deg, $brown 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 7) .gradient{
-  background: linear-gradient(0deg, $green 0%, #649dff63 75%);
+  background: linear-gradient(90deg, $green 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 7) .gradient2{
-  background: linear-gradient(-90deg, $purple2 0%, #649dff63 75%);
+  background: linear-gradient(-90deg, $purple2 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 8) .gradient{
-  background: linear-gradient(0deg, $orange 0%, #649dff63 75%);
+  background: linear-gradient(90deg, $orange 0%, rgba(255,255,255,0) 75%);
 }
 
 .people:nth-child(8n + 8) .gradient2{
-  background: linear-gradient(-90deg, $green 0%, #649dff63 75%);
+  background: linear-gradient(-90deg, $green 0%, rgba(255,255,255,0) 75%);
 }
 
 
