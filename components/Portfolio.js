@@ -14,7 +14,7 @@ export const Portfolio = ({
             return(
               i % 3 === 0 &&
               <Link href={`/portfolio/${item.uid}`}>
-                <div className="grid-item">
+                <div className={`grid-item ${categories.map((item, i) => item.category.uid)}`}>
                   <div className="countries">
                     {item.data.country_codes.map((code, j) => {
                       return(
@@ -45,7 +45,7 @@ export const Portfolio = ({
             return(
               i % 3 === 1 &&
               <Link href={`/portfolio/${item.uid}`}>
-                <div className="grid-item">
+                <div className={`grid-item ${categories.map((item, i) => item.category.uid)}`}>
                   <div className="countries">
                     {item.data.country_codes.map((code, j) => {
                       return(
