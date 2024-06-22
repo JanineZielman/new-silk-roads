@@ -1,6 +1,6 @@
 {
   "id": "category",
-  "label": "Category",
+  "label": "Service",
   "repeatable": true,
   "status": true,
   "json": {
@@ -17,6 +17,25 @@
         "config": {
           "label": "Title",
           "placeholder": ""
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {
+            "width": 300
+          },
+          "thumbnails": []
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
         }
       }
     }

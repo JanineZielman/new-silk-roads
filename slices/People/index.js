@@ -16,7 +16,6 @@ const People = ({ slice }) => (
           <div className='img-wrapper'>
             <img src={item.image.url}/>
             <div className='gradient'></div>
-            <div className='gradient gradient2'></div>
           </div>
           <div className='role'>{item.role}</div>
           <h2>{item.name}</h2>

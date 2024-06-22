@@ -25,6 +25,15 @@ export const linkResolver = (doc) => {
   if (doc.type === "page") {
     return `/${doc.uid}`;
   }
+  if (doc.type === "services") {
+    return `/services`;
+  }
+  if (doc.type === "news") {
+    return `/news`;
+  }
+  if (doc.type === "portfolio") {
+    return `/portfolio`;
+  }
   return `/`;
 };
 

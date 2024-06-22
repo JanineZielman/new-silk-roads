@@ -17,7 +17,7 @@ export const News = ({
                 <img src={item.data.image.url}/>
                 {item.data.date &&
                   <div className="date">
-                    {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) } {new Date(item.data.date).toLocaleDateString("en-US", { day: 'numeric' }) }
+                    {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) }
                   </div>
                 } 
                 <PrismicRichText field={item.data.title}/>
@@ -35,7 +35,7 @@ export const News = ({
                 <img src={item.data.image.url}/>
                 {item.data.date &&
                   <div className="date">
-                    {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) } {new Date(item.data.date).toLocaleDateString("en-US", { day: 'numeric' }) }
+                    {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) }
                   </div>
                 } 
                 <PrismicRichText field={item.data.title}/>
@@ -53,7 +53,7 @@ export const News = ({
                 <img src={item.data.image.url}/>
                 {item.data.date &&
                   <div className="date">
-                    {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) } {new Date(item.data.date).toLocaleDateString("en-US", { day: 'numeric' }) }
+                    {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) } 
                   </div>
                 } 
                 <PrismicRichText field={item.data.title}/>

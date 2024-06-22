@@ -1,0 +1,31 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "truth"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "block",
+    "type": "Text"
+  },
+  "services": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "category",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}

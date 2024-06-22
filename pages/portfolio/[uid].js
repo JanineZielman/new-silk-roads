@@ -23,8 +23,6 @@ const Page = ({ settings, page, navigation }) => {
       </Head>
       <div className={`hero page-hero`}>
         <img src={page.data.image.full ? page.data.image.full.url : page.data.image.url }/>
-        <div className={`gradient ${categories.map((item, i) => item.category.uid)}-1`}></div>
-        <div className={`gradient gradient2 ${categories.map((item, i) => item.category.uid)}-2`}></div>
         <div className="countries">
           {page.data.country_codes.map((code, j) => {
             return(

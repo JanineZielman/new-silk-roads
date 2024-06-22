@@ -49,12 +49,12 @@
       "categories": {
         "type": "Group",
         "config": {
-          "label": "Categories",
+          "label": "Services",
           "fields": {
             "category": {
               "type": "Link",
               "config": {
-                "label": "Category",
+                "label": "Service",
                 "select": "document",
                 "customtypes": [
                   "category"
@@ -77,6 +77,22 @@
               }
             }
           }
+        }
+      },
+      "color": {
+        "type": "Select",
+        "config": {
+          "label": "Color",
+          "placeholder": "",
+          "options": [
+            "pink",
+            "orange",
+            "green",
+            "purple",
+            "brown",
+            "red",
+            "blue"
+          ]
         }
       },
       "slices": {

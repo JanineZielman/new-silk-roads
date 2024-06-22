@@ -9,10 +9,11 @@ import Slider from "react-slick";
 import { PrismicNextImage } from "@prismicio/next";
 import { Portfolio } from "../components/Portfolio";
 import { NewsPreview } from "../components/NewsPreview";
+import { ServicesPreview } from "../components/ServicesPreview";
 import Link from "next/link";
 
-const Index = ({ page, settings, navigation, portfolio_items, news_items}) => {
-  console.log(page)
+const Index = ({ page, settings, navigation, portfolio_items, news_items, services}) => {
+
   var sliderSettings = {
     dots: false,
     infinite: true,
@@ -52,21 +53,29 @@ const Index = ({ page, settings, navigation, portfolio_items, news_items}) => {
         <div className="intro">
           <PrismicRichText field={page.data.intro}/>
         </div>
-        <SliceZone slices={page.data.slices} components={components} />
-        <div className="preview">
-          <div className="preview-bar">
-            <div className="subtitle">PORTFOLIO</div>
-            <Link className="read-more-button" href="/portfolio">Explore our portfolio</Link>
-          </div>
-          <Portfolio items={portfolio_items.slice(0,6)}/>
-        </div>
-        <div className="preview">
-          <div className="preview-bar">
-            <div className="subtitle">NEWS</div>
-            <Link className="read-more-button" href="/news">Read all news</Link>
-          </div>
-          <NewsPreview items={news_items.slice(0,3)}/>
-        </div>
+        <SliceZone slices={page.data.slices} components={components}/>
+        {page.data.slices.map((item, i) => {
+          return(
+            item.primary.page && 
+            <div className="preview">
+              <div className="preview-bar">
+                <div className="subtitle">{item.primary.page.uid}</div>
+                <Link className="read-more-button" href={`/${item.primary.page.uid}`}>Explore our {item.primary.page.uid}</Link>
+              </div>
+              {item.primary.page.uid == 'portfolio' &&
+                <Portfolio items={portfolio_items.slice(0,6)}/>
+              }
+              {item.primary.page.uid == 'news' &&
+                <NewsPreview items={news_items.slice(0,3)}/>
+              }
+              {item.primary.page.uid == 'services' &&
+                <ServicesPreview items={services.data.services}/>
+              }
+            </div>
+          )
+        })}
+
+
       </div>
     </Layout>
   );
@@ -82,6 +91,9 @@ export async function getStaticProps({ previewData }) {
   const page = await client.getSingle("home");
   const portfolio_items = await client.getAllByType("project");
   const news_items = await client.getAllByType("news_item");
+  const services = await client.getSingle("services", {
+    fetchLinks: 'category.title, category.image, category.description'
+  });
 
   return {
     props: {
@@ -89,7 +101,8 @@ export async function getStaticProps({ previewData }) {
       page,
       settings,
       portfolio_items,
-      news_items
+      news_items,
+      services
     },
   };
 }

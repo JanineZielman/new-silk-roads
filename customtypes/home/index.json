@@ -39,6 +39,9 @@
           "choices": {
             "text_section": {
               "type": "SharedSlice"
+            },
+            "section": {
+              "type": "SharedSlice"
             }
           }
         }

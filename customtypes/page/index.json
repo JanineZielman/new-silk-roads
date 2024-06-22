@@ -33,10 +33,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "text_section": {
+            "people": {
               "type": "SharedSlice"
             },
-            "people": {
+            "text_section": {
               "type": "SharedSlice"
             }
           }

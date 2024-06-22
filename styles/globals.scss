@@ -7,10 +7,10 @@ $white: rgb(255,255,255);
 $grey: rgb(195,195,195);
 $lblue: rgb(230,241,250);
 
-$purple: #d468c9d0;
+$pink: #d468c9d0;
 $orange: #fe8946d0;
 $green: #81c584d0;
-$purple2: #b595ffd0;
+$purple: #b595ffd0;
 $brown: #c6a67fd0;
 $red:#ff7765d0;
 $blue: #649dffd0;
@@ -19,115 +19,41 @@ $blue: #649dffd0;
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: linear-gradient(0deg, $green 0%, #649dff63 75%);
-  &.gradient2{
-    right: 0;
-    left: auto;
-  }
+  opacity: 0.5;
 }
 
-.facilitation-1{
-  background: linear-gradient(0deg, $red 0%, #649dff63 75%);
+.people .gradient{
+  background: linear-gradient(0deg, $green 0%, rgba(255,255,255,0) 30%);
 }
-
-.facilitation-2{
-  background: linear-gradient(-90deg, $brown 0%, #649dff63 75%);
-}
-
-.business-development-1{
-  background: linear-gradient(0deg, $purple 0%, #649dff63 75%);
-}
-
-.business-development-2{
-  background: linear-gradient(-90deg, $green 0%, #649dff63 75%);
-}
-
-.strategy-1{
-  background: linear-gradient(0deg, $purple2 0%, #649dff63 75%);
-}
-
-.strategy-2{
-  background: linear-gradient(-90deg, $purple 0%, #649dff63 75%);
-}
-
-.learning-1{
-  background: linear-gradient(0deg, $green 0%, #649dff63 75%);
-}
-
-.learning-2{
-  background: linear-gradient(-90deg, $orange 0%, #649dff63 75%);
-}
-
-
 
 .people:nth-child(8n + 1) .gradient{
-  background: linear-gradient(90deg, $red 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(90deg, $blue 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 1) .gradient2{
-  background: linear-gradient(-90deg, $brown 0%, rgba(255,255,255,0) 75%);
-}
-
 .people:nth-child(8n + 2) .gradient{
-  background: linear-gradient(90deg, $purple 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(180deg, $pink 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 2) .gradient2{
-  background: linear-gradient(-90deg, $green 0%, rgba(255,255,255,0) 75%);
-}
-
 .people:nth-child(8n + 3) .gradient{
-  background: linear-gradient(90deg, $purple2 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(0deg, $orange 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 3) .gradient2{
-  background: linear-gradient(-90deg, $purple 0%, rgba(255,255,255,0) 75%);
-}
-
 .people:nth-child(8n + 4) .gradient{
-  background: linear-gradient(90deg, $green 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(-90deg, $purple 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 4) .gradient2{
-  background: linear-gradient(-90deg, $orange 0%, rgba(255,255,255,0) 75%);
-}
-
 
 .people:nth-child(8n + 5) .gradient{
-  background: linear-gradient(90deg, $blue 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(0deg, $green 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 5) .gradient2{
-  background: linear-gradient(-90deg, $green 0%, rgba(255,255,255,0) 75%);
-}
-
 .people:nth-child(8n + 6) .gradient{
-  background: linear-gradient(90deg, $purple 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(-90deg, $brown 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 6) .gradient2{
-  background: linear-gradient(-90deg, $brown 0%, rgba(255,255,255,0) 75%);
-}
-
 .people:nth-child(8n + 7) .gradient{
-  background: linear-gradient(90deg, $green 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(90deg, $red 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 7) .gradient2{
-  background: linear-gradient(-90deg, $purple2 0%, rgba(255,255,255,0) 75%);
-}
-
 .people:nth-child(8n + 8) .gradient{
-  background: linear-gradient(90deg, $orange 0%, rgba(255,255,255,0) 75%);
+  background: linear-gradient(180deg, $blue 0%, rgba(255,255,255,0) 30%);
 }
-
-.people:nth-child(8n + 8) .gradient2{
-  background: linear-gradient(-90deg, $green 0%, rgba(255,255,255,0) 75%);
-}
-
-
 
 @font-face {
   font-family: "Fakt Pro";
@@ -305,7 +231,7 @@ body{
       height: auto;
       aspect-ratio: 3/2;
       object-fit: cover;
-      margin-bottom: -5px;
+      display: block;
     }
     h2{
       margin: 10px 0;
@@ -384,6 +310,7 @@ body{
   width: fit-content;
   height: fit-content;
   margin-top: 24px;
+  margin-bottom: 3px;
   text-transform: uppercase;
 }
 
@@ -391,24 +318,25 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: end;
-  .read-more-button{
-    padding: 8px 50px 8px 20px;
-    border: 1px solid black;
-    border-radius: 25px;
-    position: relative;
-    &:after{
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 80%;
-      mask-image: url(./NSR_Arrow-r.svg);
-      mask-repeat: no-repeat;
-      mask-size: contain;
-      mask-position: center;
-      background-color: $black;
-      right: 10px;
-      top: 10%;
-    }
+}
+
+.read-more-button{
+  padding: 8px 50px 8px 15px;
+  border: 1px solid black;
+  border-radius: 25px;
+  position: relative;
+  &:after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 80%;
+    mask-image: url(./NSR_Arrow-r.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: $black;
+    right: 10px;
+    top: 10%;
   }
 }
 
@@ -532,8 +460,8 @@ footer{
     img{
       width: 100%;
       height: auto;
-      margin-bottom: -6px;
       mix-blend-mode: multiply;
+      display: block;
     }
     .role{
       margin: 5px 0;
@@ -569,4 +497,58 @@ footer{
     }
   }
   margin-bottom: 48px;
+}
+
+
+//services
+
+.services-preview{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .service-item{
+    width: 23%;
+    margin-top: 5%;
+    img{
+      width: 110%;
+      height: auto;
+      margin: -20% -10%;
+    }
+  }
+}
+
+.services{
+  .text-section{
+    img{
+      width: 30%;
+      height: auto;
+      margin: -5%;
+    }
+  }
+  .description {
+    display: flex;
+    width: 70%;
+    text-align: left; 
+  }
+  .grid{
+    text-align: left;
+    padding-bottom: 24px;
+  }
+  .preview{
+    text-align: right;
+    padding-bottom: 48px;
+    padding-top: 0;
+  }
+  .read-more-button{
+    margin: 0 0 0 auto;
+  }
+  .service-item{
+    width: 33%;
+    margin-top: 5%;
+    img{
+      width: 110%;
+      height: auto;
+      margin: -20% -10%;
+    }
+  }
 }

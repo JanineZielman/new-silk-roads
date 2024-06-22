@@ -6,10 +6,10 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Category documents */
+/** Content for Service documents */
 interface CategoryDocumentData {
     /**
-     * Title field in *Category*
+     * Title field in *Service*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
@@ -19,9 +19,31 @@ interface CategoryDocumentData {
      *
      */
     title: prismicT.KeyTextField;
+    /**
+     * Image field in *Service*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: category.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Description field in *Service*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: category.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
 }
 /**
- * Category document from Prismic
+ * Service document from Prismic
  *
  * - **API ID**: `category`
  * - **Repeatable**: `true`
@@ -86,7 +108,7 @@ export interface HomeDocumentDataHeaderSliderItem {
  * Slice for *Home → Slice Zone*
  *
  */
-type HomeDocumentDataSlicesSlice = TextSectionSlice;
+type HomeDocumentDataSlicesSlice = TextSectionSlice | SectionSlice;
 /**
  * Home document from Prismic
  *
@@ -215,6 +237,30 @@ interface NewsItemDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type NewsItemDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<NewsItemDocumentData>, "news_item", Lang>;
+/** Content for News documents */
+interface NewsDocumentData {
+    /**
+     * Title field in *News*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * News document from Prismic
+ *
+ * - **API ID**: `news`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
     /**
@@ -255,7 +301,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextSectionSlice | PeopleSlice;
+type PageDocumentDataSlicesSlice = PeopleSlice | TextSectionSlice;
 /**
  * Page document from Prismic
  *
@@ -266,6 +312,30 @@ type PageDocumentDataSlicesSlice = TextSectionSlice | PeopleSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for Portfolio documents */
+interface PortfolioDocumentData {
+    /**
+     * Title field in *Portfolio*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: portfolio.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Portfolio document from Prismic
+ *
+ * - **API ID**: `portfolio`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PortfolioDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PortfolioDocumentData>, "portfolio", Lang>;
 /** Content for Project documents */
 interface ProjectDocumentData {
     /**
@@ -302,7 +372,7 @@ interface ProjectDocumentData {
      */
     image: prismicT.ImageField<"full">;
     /**
-     * Categories field in *Project*
+     * Services field in *Project*
      *
      * - **Field Type**: Group
      * - **Placeholder**: *None*
@@ -324,6 +394,17 @@ interface ProjectDocumentData {
      */
     country_codes: prismicT.GroupField<Simplify<ProjectDocumentDataCountryCodesItem>>;
     /**
+     * Color field in *Project*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.color
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    color: prismicT.SelectField<"pink" | "orange" | "green" | "purple" | "brown" | "red" | "blue">;
+    /**
      * Slice Zone field in *Project*
      *
      * - **Field Type**: Slice Zone
@@ -336,12 +417,12 @@ interface ProjectDocumentData {
     slices: prismicT.SliceZone<ProjectDocumentDataSlicesSlice>;
 }
 /**
- * Item in Project → Categories
+ * Item in Project → Services
  *
  */
 export interface ProjectDocumentDataCategoriesItem {
     /**
-     * Category field in *Project → Categories*
+     * Service field in *Project → Services*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
@@ -382,6 +463,57 @@ type ProjectDocumentDataSlicesSlice = TextSectionSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, "project", Lang>;
+/** Content for Services documents */
+interface ServicesDocumentData {
+    /**
+     * Title field in *Services*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Services field in *Services*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services.services[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    services: prismicT.GroupField<Simplify<ServicesDocumentDataServicesItem>>;
+}
+/**
+ * Item in Services → Services
+ *
+ */
+export interface ServicesDocumentDataServicesItem {
+    /**
+     * Service field in *Services → Services*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services.services[].category
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField<"category">;
+}
+/**
+ * Services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ServicesDocumentData>, "services", Lang>;
 /** Content for Settings documents */
 interface SettingsDocumentData {
     /**
@@ -428,7 +560,7 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = CategoryDocument | HomeDocument | NavigationDocument | NewsItemDocument | PageDocument | ProjectDocument | SettingsDocument;
+export type AllDocumentTypes = CategoryDocument | HomeDocument | NavigationDocument | NewsItemDocument | NewsDocument | PageDocument | PortfolioDocument | ProjectDocument | ServicesDocument | SettingsDocument;
 /**
  * Primary content in People → Primary
  *
@@ -505,6 +637,45 @@ type PeopleSliceVariation = PeopleSliceDefault;
  */
 export type PeopleSlice = prismicT.SharedSlice<"people", PeopleSliceVariation>;
 /**
+ * Primary content in Section → Primary
+ *
+ */
+interface SectionSliceDefaultPrimary {
+    /**
+     * Page field in *Section → Primary*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section.primary.page
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    page: prismicT.RelationField<"page" | "portfolio" | "news" | "services">;
+}
+/**
+ * Default variation for Section Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Section`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SectionSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Section*
+ *
+ */
+type SectionSliceVariation = SectionSliceDefault;
+/**
+ * Section Shared Slice
+ *
+ * - **API ID**: `section`
+ * - **Description**: `Section`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SectionSlice = prismicT.SharedSlice<"section", SectionSliceVariation>;
+/**
  * Primary content in TextSection → Primary
  *
  */
@@ -558,6 +729,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataSlicesSlice, ProjectDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, PeopleSliceDefaultPrimary, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
+        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PortfolioDocumentData, PortfolioDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataSlicesSlice, ProjectDocument, ServicesDocumentData, ServicesDocumentDataServicesItem, ServicesDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, PeopleSliceDefaultPrimary, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, SectionSliceDefaultPrimary, SectionSliceDefault, SectionSliceVariation, SectionSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
     }
 }
