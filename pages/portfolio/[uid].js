@@ -7,6 +7,7 @@ import { Layout } from "../../components/Layout";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { PrismicRichText } from '@prismicio/react'
+import Link from "next/link";
 
 
 const Page = ({ settings, page, navigation }) => {
@@ -36,7 +37,7 @@ const Page = ({ settings, page, navigation }) => {
           <div className="categories">
             {categories.map((item, i) => {
               return(
-                <div className="category" key={`category${i}`}>{item.category.uid.replaceAll('-', ' ')}</div>
+                <div className="category" key={`category${i}`}><Link href={`/services/${item.category.uid}`}>{item.category.uid.replaceAll('-', ' ')}</Link></div>
               )
             })}
           </div>
