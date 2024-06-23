@@ -8,9 +8,8 @@ export const ServicesPreview = ({
   return (
     <div className="services-preview">
       {items.map((item, i) => { 
-        console.log(item)
         return(
-          <div className='service-item'>
+          <div className='service-item' key={`serviceitem${i}`}>
               <img src={item.category.data.image?.url}/>
               <h2>{item.category.data.title}</h2>
               <PrismicRichText field={item.category.data.description}/>
