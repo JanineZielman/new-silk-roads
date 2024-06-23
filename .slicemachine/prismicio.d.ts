@@ -624,6 +624,16 @@ export interface PeopleSliceDefaultItem {
      *
      */
     name: prismicT.KeyTextField;
+    /**
+     * Mail field in *People → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: people.items[].mail
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    mail: prismicT.KeyTextField;
 }
 /**
  * Default variation for People Slice

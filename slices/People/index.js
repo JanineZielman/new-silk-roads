@@ -12,7 +12,7 @@ const People = ({ slice }) => (
   <section className='people-section'>
      {slice?.items?.map((item, i) => {
       return(
-        <div className='people'>
+        <a className='people' href={`mailto:${item.mail}`}>
           <div className='img-wrapper'>
             <img src={item.image.url}/>
             <div className='gradient'></div>
@@ -20,7 +20,7 @@ const People = ({ slice }) => (
           <div className='role'>{item.role}</div>
           <h2>{item.name}</h2>
           
-        </div>
+        </a>
       )
      })}
   </section>

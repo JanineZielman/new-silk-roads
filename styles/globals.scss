@@ -51,10 +51,22 @@ $blue: #649dffd0;
 
 
 
-
 .people .gradient{
   background: linear-gradient(0deg, $green 0%, rgba(255,255,255,0) 30%);
-  opacity: 0.5;
+  opacity: 0.4;
+  transition: all 0.4s ease-in-out;
+}
+
+.people{
+  &:hover{
+    img{
+      transition: all 0.4s ease-in-out;
+      transform: scale(1.1);
+    }
+    .gradient{
+      opacity: 1;
+    }
+  }
 }
 
 .people:nth-child(8n + 1) .gradient{
@@ -495,7 +507,7 @@ footer{
     position: relative;
     .img-wrapper{
       position: relative;
-      
+      overflow: hidden;
     }
     img{
       width: 100%;

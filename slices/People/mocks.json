@@ -54,6 +54,14 @@
               "value": "effort",
               "type": "Text"
             }
+          ],
+          [
+            "mail",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "sunlight",
+              "type": "Text"
+            }
           ]
         ]
       }
