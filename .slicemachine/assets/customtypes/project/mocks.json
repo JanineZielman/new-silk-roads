@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "familiar"
+    "value": "shout"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading2",
         "content": {
-          "text": "Stood"
+          "text": "Discovery"
         }
       }
     ]
@@ -20,7 +20,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Enim ea dolor id laborum voluptate duis cupidatat duis minim proident ut est culpa anim commodo."
+          "text": "In duis cillum labore eiusmod do ex nisi sunt elit laborum exercitation sit proident est. Aliqua proident ipsum commodo sit excepteur aliquip sint reprehenderit ad enim irure in duis ut aliqua."
         }
       }
     ]
@@ -29,13 +29,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51",
-      "width": 2545,
-      "height": 2545
+      "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
+      "width": 3168,
+      "height": 4752
     },
-    "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?rect=0%2C0%2C2545%2C2545&w=1080&h=1080",
+    "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?rect=0%2C0%2C3168%2C4752&w=1080&h=1620",
     "width": 1080,
-    "height": 1080,
+    "height": 1620,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -48,13 +48,13 @@
       "full": {
         "origin": {
           "id": "full",
-          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
-          "width": 3456,
-          "height": 3456
+          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+          "width": 6597,
+          "height": 4398
         },
-        "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?rect=0%2C0%2C3456%2C3456&w=1920&h=1920",
+        "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?rect=0%2C0%2C6597%2C4398&w=1920&h=1280",
         "width": 1920,
-        "height": 1920,
+        "height": 1280,
         "edit": {
           "zoom": 1,
           "crop": {
@@ -96,7 +96,7 @@
             "country_code",
             {
               "__TYPE__": "FieldContent",
-              "value": "theory",
+              "value": "disease",
               "type": "Text"
             }
           ]
@@ -106,14 +106,18 @@
   },
   "color": {
     "__TYPE__": "FieldContent",
-    "value": "red",
+    "value": "pink",
     "type": "Select"
+  },
+  "gradient": {
+    "__TYPE__": "BooleanContent",
+    "value": false
   },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "text_section$bcfa24e1-6876-47b2-a8bf-5afae0f4f55e",
+        "key": "text_section$250acaae-7e00-4f5f-98ff-a8c93847e591",
         "name": "text_section",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -121,7 +125,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "waste",
+              "value": "power",
               "type": "Text"
             },
             "description": {
@@ -130,7 +134,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Quis eu elit magna. Sit eu voluptate magna aute."
+                    "text": "Excepteur consequat veniam enim velit officia in dolor exercitation irure do amet. Anim et ea ullamco ipsum nulla dolor non aliqua reprehenderit do veniam anim amet. Irure amet irure nulla Lorem nisi excepteur tempor eu."
                   }
                 }
               ]

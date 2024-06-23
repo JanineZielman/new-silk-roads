@@ -22,8 +22,9 @@ const Page = ({ settings, page, navigation }) => {
         <meta property="og:description" content={settings.data.site_description[0].text} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
-      <div className={`hero page-hero`}>
+      <div className={`hero page-hero ${page.data.image.url ? 'has-img' : 'no-img'}`}>
         <img src={page.data.image.full ? page.data.image.full.url : page.data.image.url }/>
+        {(page.data.gradient == true || !page.data.image.url) &&<div className={`gradient ${page.data.color} ${page.data.image.url ? 'img' : ''}`}></div>}
         <div className="countries">
           {page.data.country_codes.map((code, j) => {
             return(

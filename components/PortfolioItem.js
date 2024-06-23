@@ -4,13 +4,13 @@ import Link from "next/link";
 export const PortfolioItem = ({
   item, categories
 }) => {
-  console.log(categories)
+  console.log(item.data.gradient)
   return (
     <Link href={`/portfolio/${item.uid}`}>
       <div className={`grid-item ${categories.map((item, i) => item.category.uid).join(' ')}`}>
         <div className="img-wrapper">
           <img src={item.data.image.url}/>
-          <div className={`gradient`}></div>
+          {(item.data.gradient == true || !item.data.image.url) &&<div className={`gradient ${item.data.color} ${item.data.image.url ? 'img' : ''}`}></div>}
         </div>
         {item.data.date &&
           <div className="date">

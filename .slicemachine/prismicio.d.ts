@@ -405,6 +405,18 @@ interface ProjectDocumentData {
      */
     color: prismicT.SelectField<"pink" | "orange" | "green" | "purple" | "brown" | "red" | "blue">;
     /**
+     * Gradient field in *Project*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: project.gradient
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    gradient: prismicT.BooleanField;
+    /**
      * Slice Zone field in *Project*
      *
      * - **Field Type**: Slice Zone
