@@ -7,10 +7,10 @@ export const PortfolioItem = ({
   console.log(categories)
   return (
     <Link href={`/portfolio/${item.uid}`}>
-      <div className={`grid-item ${categories.map((item, i) => item.category.uid)}`}>
+      <div className={`grid-item ${categories.map((item, i) => item.category.uid).join(' ')}`}>
         <div className="img-wrapper">
           <img src={item.data.image.url}/>
-          <div className={`gradient ${categories.map((item, i) => item.category.uid)}`}></div>
+          <div className={`gradient`}></div>
         </div>
         {item.data.date &&
           <div className="date">
