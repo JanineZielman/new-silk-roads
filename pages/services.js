@@ -39,7 +39,7 @@ const Index = ({ settings, navigation, page, items}) => {
                   </div>
                 </div>
                 <Portfolio items={items.filter((cat) => cat.data.categories.some((category) => category?.category?.uid == item.category.uid)).slice(0,3)}/>
-                <Link className="read-more-button" href={`/portfolio/${item.category.uid}`}>More projects</Link>
+                <Link className="read-more-button" href={`/services/${item.category.uid}`}>More projects</Link>
               </div>
             )
           })}

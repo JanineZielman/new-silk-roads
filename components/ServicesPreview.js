@@ -9,11 +9,13 @@ export const ServicesPreview = ({
     <div className="services-preview">
       {items.map((item, i) => { 
         return(
-          <div className='service-item' key={`serviceitem${i}`}>
-              <img src={item.category.data.image?.url}/>
-              <h2>{item.category.data.title}</h2>
-              <PrismicRichText field={item.category.data.description}/>
-          </div>
+            <div className='service-item' key={`serviceitem${i}`}>
+               <Link  href={`/services/${item.category.uid}`}>
+                <img src={item.category.data.image?.url}/>
+                <h2>{item.category.data.title}</h2>
+                <PrismicRichText field={item.category.data.description}/>
+                </Link>
+            </div>
         )
       })}
     </div>

@@ -4,14 +4,13 @@ import Link from "next/link";
 export const PortfolioItem = ({
   item, categories
 }) => {
-
+  console.log(categories)
   return (
     <Link href={`/portfolio/${item.uid}`}>
       <div className={`grid-item ${categories.map((item, i) => item.category.uid)}`}>
         <div className="img-wrapper">
           <img src={item.data.image.url}/>
-          <div className={`gradient ${categories.map((item, i) => item.category.uid)} ${categories.map((item, i) => item.category.uid)}-1`}></div>
-          <div className={`gradient gradient2 ${categories.map((item, i) => item.category.uid)} ${categories.map((item, i) => item.category.uid)}-2`}></div>
+          <div className={`gradient ${categories.map((item, i) => item.category.uid)}`}></div>
         </div>
         {item.data.date &&
           <div className="date">
