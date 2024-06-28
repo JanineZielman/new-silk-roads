@@ -12,12 +12,10 @@
       "description": "LogoSlider",
       "primary": {
         "title": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Title",
-            "placeholder": "This is where it all begins...",
-            "allowTargetBlank": true,
-            "single": "heading2"
+            "placeholder": ""
           }
         }
       },

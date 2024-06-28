@@ -213,7 +213,7 @@ body{
     }
     .slick-slide{
       img{
-        width: 100vw;
+        width: 100vw!important;
         height: 100vh;
         object-fit: cover;
       }
@@ -653,4 +653,27 @@ footer{
   .Collapsible__contentInner{
     padding-bottom: 50px;
   }
+}
+
+.logo-wrapper{
+  padding: 48px 0;
+}
+
+.img-slide{
+  margin-top: 24px;
+  img{
+    width: 100%;
+    height: auto;
+    padding: 14px;
+    max-height: 150px;
+  }
+}
+.slick-track {
+  display: flex;
+}
+.slick-track .slick-slide {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
 }

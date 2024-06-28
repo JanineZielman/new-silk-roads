@@ -632,13 +632,13 @@ interface LogoSliderSliceDefaultPrimary {
     /**
      * Title field in *LogoSlider → Primary*
      *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
      * - **API ID Path**: logo_slider.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    title: prismicT.TitleField;
+    title: prismicT.KeyTextField;
 }
 /**
  * Item in LogoSlider → Items

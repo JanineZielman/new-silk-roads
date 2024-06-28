@@ -1,36 +1,41 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
+import Slider from "react-slick";
 
 /**
  * @typedef {import("@prismicio/client").Content.LogoSliderSlice} LogoSliderSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<LogoSliderSlice>} LogoSliderProps
  * @param { LogoSliderProps }
  */
-const LogoSlider = ({ slice }) => (
-  <section>
-    <span className="title">
-      {
-        slice.primary.title ?
-        <PrismicRichText field={slice.primary.title}/>
-        : <h2>Template slice, update me!</h2>
-      }
-    </span>
-    {
-      slice.primary.description ?
-      <PrismicRichText field={slice.primary.description}/>
-      : <p>start by editing this slice from inside Slice Machine!</p>
-    }
-    <style jsx>{`
-        section {
-          max-width: 600px;
-          margin: 4em auto;
-          text-align: center;
-        }
-        .title {
-          color: #8592e0;
-        }
-    `}</style>
-  </section>
-)
+const LogoSlider = ({ slice }) => {
+  console.log(slice)
+  var settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 2500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    cssEase: 'linear',
+    autoplaySpeed: 2500
+  };
+  return(
+    <section className='logo-wrapper'>
+      <div className='subtitle'>{slice.primary.title}</div>
+      <div className='logo-slider'>
+        <Slider {...settings}>
+          {slice.items.map((item, i) => {
+            return(
+              <div className='img-slide'>
+                <img src={item.logo.url}/>
+              </div>
+            )
+          })}
+        </Slider>
+      </div>
+    </section>
+  )
+}
 
 export default LogoSlider
