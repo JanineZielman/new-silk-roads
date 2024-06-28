@@ -3,14 +3,10 @@ import Head from "next/head";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
-import Collapsible from 'react-collapsible';
 import Link from "next/link";
-import { Portfolio } from "../components/Portfolio";
 
 
-const Index = ({ settings, navigation, page, items}) => {
-  console.log(items)
-  // console.log(items.filter((cat) => cat.data.categories[0].category.uid == item.category.uid))
+const Index = ({ settings, navigation, page}) => {
   return (
     <Layout navigation={navigation}>
       <Head>
@@ -28,19 +24,14 @@ const Index = ({ settings, navigation, page, items}) => {
           {page.data.services.map((item, i) => {
             return(
               <div className="preview" key={`service${i}`}>
-                <div className="preview-bar">
-                  <div className="subtitle">{item.category.data.title}</div>
-                </div>
+                <h2>{item.category.data.title}</h2>
                 <div className="text-section">
                   <img src={item.category.data.image?.url}/>
                   <div className="description">
                     <PrismicRichText field={item.category.data.description}/>
                   </div>
                 </div>
-                <Collapsible trigger="Related projects">
-                  <Portfolio items={items.filter((cat) => cat.data.categories.some((category) => category?.category?.uid == item.category.uid)).slice(0,3)}/>
-                  <Link className="read-more-button" href={`/services/${item.category.uid}`}>More projects</Link>
-                </Collapsible>
+                <Link className="read-more-button" href={`/services/${item.category.uid}`}>Explore projects</Link>
               </div>
             )
           })}
@@ -60,14 +51,12 @@ export async function getStaticProps({ previewData }) {
   const page = await client.getSingle("services", {
     fetchLinks: 'category.title, category.image, category.description'
   });
-  const items = await client.getAllByType("project");
 
   return {
     props: {
       navigation,
       settings,
-      page,
-      items
+      page
     },
   };
 }

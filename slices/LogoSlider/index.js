@@ -14,7 +14,7 @@ const LogoSlider = ({ slice }) => {
     arrows: false,
     infinite: true,
     speed: 2500,
-    slidesToShow: 5,
+    slidesToShow: 10,
     slidesToScroll: 1,
     autoplay: true,
     cssEase: 'linear',
@@ -25,6 +25,13 @@ const LogoSlider = ({ slice }) => {
       <div className='subtitle'>{slice.primary.title}</div>
       <div className='logo-slider'>
         <Slider {...settings}>
+          {slice.items.map((item, i) => {
+            return(
+              <div className='img-slide'>
+                <img src={item.logo.url}/>
+              </div>
+            )
+          })}
           {slice.items.map((item, i) => {
             return(
               <div className='img-slide'>

@@ -99,7 +99,6 @@ $blue: #649dffd0;
 @font-face {
   font-family: "Fakt Pro";
   src: url("FaktPro-Reg.woff2") format("woff2");
-  font-weight: 500;
 }
 
 @font-face {
@@ -111,12 +110,12 @@ $blue: #649dffd0;
 h2{
   font-weight: 500;
   font-size: 36px;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 p{
   font-size: 18px;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 a{
@@ -455,8 +454,8 @@ footer{
 
 .category{
   text-transform: capitalize;
-  background-color: $black;
-  color: $white;
+  color: $black;
+  border: 1px solid $black;
   width: fit-content;
   padding: 5px 20px;
   border-radius: 25px;
@@ -519,7 +518,7 @@ footer{
   .description{
     width: 60%;
     p{
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 }
@@ -589,13 +588,20 @@ footer{
   justify-content: space-between;
   flex-wrap: wrap;
   .service-item{
-    width: 31%;
+    width: 15%;
     margin-top: 5%;
     img{
       width: 110%;
       height: auto;
-      margin: -20% -10%;
+      margin: -20% -5%;
       transition: all 0.4s ease;
+    }
+    h2{
+      font-size: 24px;
+      text-align: center;
+    }
+    p{
+      display: none;
     }
     &:hover{
       img{
@@ -606,16 +612,30 @@ footer{
 }
 
 .services{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .preview{
+    width: 31%;
+    &:hover{
+      img{
+        transform: scale(1.1);
+      }
+    }
+  }
+  
   .text-section{
+    flex-direction: column;
     img{
-      width: 30%;
+      width: 100%;
       height: auto;
-      margin: -5%;
+      margin: -20% -5%;
+      transition: all 0.4s ease-in-out;
     }
   }
   .description {
     display: flex;
-    width: 70%;
+    width: 100%;
     text-align: left; 
   }
   .grid{
@@ -623,7 +643,6 @@ footer{
     padding-bottom: 24px;
   }
   .preview{
-    text-align: right;
     padding-bottom: 48px;
     padding-top: 0;
   }
