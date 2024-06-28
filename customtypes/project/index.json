@@ -104,6 +104,24 @@
           "default_value": false
         }
       },
+      "partners": {
+        "type": "Group",
+        "config": {
+          "label": "Partners",
+          "fields": {
+            "partner": {
+              "type": "Link",
+              "config": {
+                "label": "Partner",
+                "select": "document",
+                "customtypes": [
+                  "partner"
+                ]
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

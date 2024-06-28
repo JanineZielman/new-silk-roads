@@ -44,11 +44,13 @@
             "placeholder": ""
           }
         },
-        "mail": {
-          "type": "Text",
+        "bio": {
+          "type": "StructuredText",
           "config": {
-            "label": "Mail",
-            "placeholder": ""
+            "label": "Bio",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
           }
         }
       },

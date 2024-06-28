@@ -1,11 +1,11 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "easier"
+    "value": "motor"
   },
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "natural",
+    "value": "religious",
     "type": "Text"
   },
   "intro": {
@@ -14,7 +14,7 @@
       {
         "type": "heading2",
         "content": {
-          "text": "Block"
+          "text": "Ability"
         }
       }
     ]
@@ -23,7 +23,7 @@
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "people$76ea9cfc-8af1-49fc-a31f-d09e29a89dc1",
+        "key": "people$2bf56507-f648-4a4d-a81b-b8d0782ec41b",
         "name": "people",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -31,7 +31,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "stomach",
+              "value": "mistake",
               "type": "Text"
             }
           },
@@ -45,17 +45,17 @@
                     "__TYPE__": "ImageContent",
                     "origin": {
                       "id": "main",
-                      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
-                      "width": 4380,
-                      "height": 2895
+                      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+                      "width": 5848,
+                      "height": 3899
                     },
-                    "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=1%2C0%2C4379%2C2895&w=1080&h=714",
+                    "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?rect=0%2C0%2C5848%2C3899&w=1080&h=720",
                     "width": 1080,
-                    "height": 714,
+                    "height": 720,
                     "edit": {
                       "zoom": 1,
                       "crop": {
-                        "x": 1,
+                        "x": 0,
                         "y": 0
                       },
                       "background": "transparent"
@@ -67,7 +67,7 @@
                   "role",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "author",
+                    "value": "minute",
                     "type": "Text"
                   }
                 ],
@@ -75,8 +75,22 @@
                   "name",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "note",
+                    "value": "thick",
                     "type": "Text"
+                  }
+                ],
+                [
+                  "bio",
+                  {
+                    "__TYPE__": "StructuredTextContent",
+                    "value": [
+                      {
+                        "type": "paragraph",
+                        "content": {
+                          "text": "Duis do deserunt aliquip non laboris aliquip minim reprehenderit. Aliquip nisi magna minim. Non nulla eu in ad elit irure ea quis cillum."
+                        }
+                      }
+                    ]
                   }
                 ]
               ]
@@ -85,7 +99,7 @@
         }
       },
       {
-        "key": "text_section$132a831c-982b-4e7d-a776-e1a81b195012",
+        "key": "text_section$8cfaed03-921b-4dca-8a18-c0d84f697787",
         "name": "text_section",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -93,7 +107,7 @@
           "primary": {
             "title": {
               "__TYPE__": "FieldContent",
-              "value": "buy",
+              "value": "twenty",
               "type": "Text"
             },
             "description": {
@@ -102,7 +116,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Exercitation aute est sint aliqua dolore nulla nisi commodo incididunt do. Tempor tempor irure irure amet consequat."
+                    "text": "Excepteur eu commodo officia sit et. Dolore et labore culpa commodo ex eu irure nulla pariatur."
                   }
                 }
               ]
@@ -112,6 +126,58 @@
             {
               "__TYPE__": "GroupItemContent",
               "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "logo_slider$94da9b3b-2f41-4ef4-ba82-f82271a792b6",
+        "name": "logo_slider",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading2",
+                  "content": {
+                    "text": "Plate"
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "logo",
+                  {
+                    "__TYPE__": "ImageContent",
+                    "origin": {
+                      "id": "main",
+                      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+                      "width": 6000,
+                      "height": 4000
+                    },
+                    "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+                    "width": 6000,
+                    "height": 4000,
+                    "edit": {
+                      "zoom": 1,
+                      "crop": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "background": "transparent"
+                    },
+                    "thumbnails": {}
+                  }
+                ]
+              ]
             }
           ]
         }

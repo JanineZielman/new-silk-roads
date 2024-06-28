@@ -56,11 +56,17 @@
             }
           ],
           [
-            "mail",
+            "bio",
             {
-              "__TYPE__": "FieldContent",
-              "value": "sunlight",
-              "type": "Text"
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Aliqua Lorem laboris aliquip dolor qui sit ut excepteur consectetur aute elit."
+                  }
+                }
+              ]
             }
           ]
         ]

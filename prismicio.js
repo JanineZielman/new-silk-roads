@@ -34,6 +34,9 @@ export const linkResolver = (doc) => {
   if (doc.type === "portfolio") {
     return `/portfolio`;
   }
+  if (doc.type === "partner") {
+    return `/partners/${doc.uid}`;
+  }
   return `/`;
 };
 

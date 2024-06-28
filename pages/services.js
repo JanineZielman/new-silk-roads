@@ -1,5 +1,4 @@
 import Head from "next/head";
-import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";

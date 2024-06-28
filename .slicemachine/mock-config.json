@@ -4,7 +4,8 @@
     "settings": {},
     "news_item": {},
     "project": {
-      "categories": {}
+      "categories": {},
+      "partners": {}
     },
     "category": {},
     "home": {
@@ -15,7 +16,8 @@
     "portfolio": {},
     "services": {
       "services": {}
-    }
+    },
+    "partner": {}
   },
   "slices": {
     "TextSection": {
@@ -30,6 +32,11 @@
       }
     },
     "Section": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "LogoSlider": {
       "default": {
         "primary": {}
       }

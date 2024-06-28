@@ -5,5 +5,5 @@ export default {
 }
 
 
-export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"image":{"dimensions":{"width":1080,"height":1080},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1607582278043-57198ac8da43?rect=0%2C0%2C4024%2C4024&w=1080&h=1080"},"role":"built","name":"effort","mail":"sunlight"}],"primary":{"title":"molecular"},"id":"_Default","slice_type":"people"}} />
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"image":{"dimensions":{"width":1080,"height":1080},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1607582278043-57198ac8da43?rect=0%2C0%2C4024%2C4024&w=1080&h=1080"},"role":"built","name":"effort","bio":[{"type":"paragraph","text":"Aliqua Lorem laboris aliquip dolor qui sit ut excepteur consectetur aute elit.","spans":[]}]}],"primary":{"title":"molecular"},"id":"_Default","slice_type":"people"}} />
 _Default.storyName = ''

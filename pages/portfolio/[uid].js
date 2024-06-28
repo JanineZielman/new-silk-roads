@@ -12,6 +12,7 @@ import Link from "next/link";
 
 const Page = ({ settings, page, navigation }) => {
   let categories = page.data.categories
+  console.log(page)
   return (
     <Layout navigation={navigation}>
       <Head>
@@ -22,19 +23,12 @@ const Page = ({ settings, page, navigation }) => {
         <meta property="og:description" content={settings.data.site_description[0].text} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
+      <div className='project'>
       <div className={`hero page-hero ${page.data.image.url ? 'has-img' : 'no-img'}`}>
         <img src={page.data.image.full ? page.data.image.full.url : page.data.image.url }/>
         {(page.data.gradient == true || !page.data.image.url) &&<div className={`gradient ${page.data.color} ${page.data.image.url ? 'img' : ''}`}></div>}
-        <div className="countries">
-          {page.data.country_codes.map((code, j) => {
-            return(
-              code.country_code &&<div className="country" key={`country${j}`}>{code.country_code}</div>
-            )
-          })}
-        </div>
       </div>
-      <div className='container project'>
-        <div className="content-right">
+      <div className="content-right">
           <div className="categories">
             {categories.map((item, i) => {
               return(
@@ -44,9 +38,22 @@ const Page = ({ settings, page, navigation }) => {
           </div>
           <PrismicRichText field={page.data.title}/>
           <PrismicRichText field={page.data.description}/>
+          <SliceZone slices={page.data.slices} components={components} />
+          <section className='text-section'>
+            <div className='subtitle'>Partners</div>
+
+            <div className='description'>
+              <p>
+                {page.data.partners.map((item, i) => {
+                  return(
+                    <Link key={`partner${i}`} href={`/partners/${item.partner.uid}`}>{item.partner.uid}</Link>
+                  )
+                })}
+              </p>
+            </div>
+          </section>
         </div>
-        <SliceZone slices={page.data.slices} components={components} />
-      </div>
+      </div>    
     </Layout>
   );
 };

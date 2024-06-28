@@ -1,0 +1,11 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "wall"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "east",
+    "type": "Text"
+  }
+}

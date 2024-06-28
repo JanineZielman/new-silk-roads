@@ -108,7 +108,7 @@ export interface HomeDocumentDataHeaderSliderItem {
  * Slice for *Home → Slice Zone*
  *
  */
-type HomeDocumentDataSlicesSlice = TextSectionSlice | SectionSlice;
+type HomeDocumentDataSlicesSlice = TextSectionSlice | SectionSlice | LogoSliderSlice;
 /**
  * Home document from Prismic
  *
@@ -301,7 +301,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = PeopleSlice | TextSectionSlice;
+type PageDocumentDataSlicesSlice = PeopleSlice | TextSectionSlice | LogoSliderSlice;
 /**
  * Page document from Prismic
  *
@@ -312,6 +312,30 @@ type PageDocumentDataSlicesSlice = PeopleSlice | TextSectionSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for Partner documents */
+interface PartnerDocumentData {
+    /**
+     * Title field in *Partner*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: partner.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Partner document from Prismic
+ *
+ * - **API ID**: `partner`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PartnerDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PartnerDocumentData>, "partner", Lang>;
 /** Content for Portfolio documents */
 interface PortfolioDocumentData {
     /**
@@ -417,6 +441,17 @@ interface ProjectDocumentData {
      */
     gradient: prismicT.BooleanField;
     /**
+     * Partners field in *Project*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.partners[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    partners: prismicT.GroupField<Simplify<ProjectDocumentDataPartnersItem>>;
+    /**
      * Slice Zone field in *Project*
      *
      * - **Field Type**: Slice Zone
@@ -459,6 +494,22 @@ export interface ProjectDocumentDataCountryCodesItem {
      *
      */
     country_code: prismicT.KeyTextField;
+}
+/**
+ * Item in Project → Partners
+ *
+ */
+export interface ProjectDocumentDataPartnersItem {
+    /**
+     * Partner field in *Project → Partners*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.partners[].partner
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    partner: prismicT.RelationField<"partner">;
 }
 /**
  * Slice for *Project → Slice Zone*
@@ -572,7 +623,62 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = CategoryDocument | HomeDocument | NavigationDocument | NewsItemDocument | NewsDocument | PageDocument | PortfolioDocument | ProjectDocument | ServicesDocument | SettingsDocument;
+export type AllDocumentTypes = CategoryDocument | HomeDocument | NavigationDocument | NewsItemDocument | NewsDocument | PageDocument | PartnerDocument | PortfolioDocument | ProjectDocument | ServicesDocument | SettingsDocument;
+/**
+ * Primary content in LogoSlider → Primary
+ *
+ */
+interface LogoSliderSliceDefaultPrimary {
+    /**
+     * Title field in *LogoSlider → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: logo_slider.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in LogoSlider → Items
+ *
+ */
+export interface LogoSliderSliceDefaultItem {
+    /**
+     * Logo field in *LogoSlider → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: logo_slider.items[].logo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for LogoSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `LogoSlider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogoSliderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<LogoSliderSliceDefaultPrimary>, Simplify<LogoSliderSliceDefaultItem>>;
+/**
+ * Slice variation for *LogoSlider*
+ *
+ */
+type LogoSliderSliceVariation = LogoSliderSliceDefault;
+/**
+ * LogoSlider Shared Slice
+ *
+ * - **API ID**: `logo_slider`
+ * - **Description**: `LogoSlider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogoSliderSlice = prismicT.SharedSlice<"logo_slider", LogoSliderSliceVariation>;
 /**
  * Primary content in People → Primary
  *
@@ -625,15 +731,15 @@ export interface PeopleSliceDefaultItem {
      */
     name: prismicT.KeyTextField;
     /**
-     * Mail field in *People → Items*
+     * Bio field in *People → Items*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: people.items[].mail
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **API ID Path**: people.items[].bio
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    mail: prismicT.KeyTextField;
+    bio: prismicT.RichTextField;
 }
 /**
  * Default variation for People Slice
@@ -751,6 +857,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PortfolioDocumentData, PortfolioDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataSlicesSlice, ProjectDocument, ServicesDocumentData, ServicesDocumentDataServicesItem, ServicesDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, PeopleSliceDefaultPrimary, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, SectionSliceDefaultPrimary, SectionSliceDefault, SectionSliceVariation, SectionSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
+        export type { CategoryDocumentData, CategoryDocument, HomeDocumentData, HomeDocumentDataHeaderSliderItem, HomeDocumentDataSlicesSlice, HomeDocument, NavigationDocumentData, NavigationDocumentDataMenuItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, PartnerDocumentData, PartnerDocument, PortfolioDocumentData, PortfolioDocument, ProjectDocumentData, ProjectDocumentDataCategoriesItem, ProjectDocumentDataCountryCodesItem, ProjectDocumentDataPartnersItem, ProjectDocumentDataSlicesSlice, ProjectDocument, ServicesDocumentData, ServicesDocumentDataServicesItem, ServicesDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, LogoSliderSliceDefaultPrimary, LogoSliderSliceDefaultItem, LogoSliderSliceDefault, LogoSliderSliceVariation, LogoSliderSlice, PeopleSliceDefaultPrimary, PeopleSliceDefaultItem, PeopleSliceDefault, PeopleSliceVariation, PeopleSlice, SectionSliceDefaultPrimary, SectionSliceDefault, SectionSliceVariation, SectionSlice, TextSectionSliceDefaultPrimary, TextSectionSliceDefault, TextSectionSliceVariation, TextSectionSlice };
     }
 }

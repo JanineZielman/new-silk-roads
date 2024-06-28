@@ -3,8 +3,6 @@ import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-import { PrismicRichText, PrismicLink } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import { News } from "../components/News";
 
 const Index = ({ settings, navigation, items}) => {

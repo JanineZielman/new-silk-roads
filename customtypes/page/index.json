@@ -38,6 +38,9 @@
             },
             "text_section": {
               "type": "SharedSlice"
+            },
+            "logo_slider": {
+              "type": "SharedSlice"
             }
           }
         }

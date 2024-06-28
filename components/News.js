@@ -14,7 +14,9 @@ export const News = ({
             i % 3 === 0 &&
             <Link href={`/news/${item.uid}`} key={`news1-${i}`}>
               <div className="grid-item">
-                <img src={item.data.image.url}/>
+                <div className="img-wrapper">
+                  <img src={item.data.image.url}/>
+                </div>
                 {item.data.date &&
                   <div className="date">
                     {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) }
@@ -32,7 +34,9 @@ export const News = ({
             i % 3 === 1 &&
             <Link href={`/news/${item.uid}`} key={`news2-${i}`}>
               <div className="grid-item">
-                <img src={item.data.image.url}/>
+                <div className="img-wrapper">
+                  <img src={item.data.image.url}/>
+                </div>
                 {item.data.date &&
                   <div className="date">
                     {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) }
@@ -50,7 +54,9 @@ export const News = ({
             i % 3 === 2 &&
             <Link href={`/news/${item.uid}`} key={`news3-${i}`}>
               <div className="grid-item">
-                <img src={item.data.image.url}/>
+                <div className="img-wrapper">
+                  <img src={item.data.image.url}/>
+                </div>
                 {item.data.date &&
                   <div className="date">
                     {new Date(item.data.date).toLocaleDateString("en-US", { year: 'numeric' }) } {new Date(item.data.date).toLocaleDateString("en-US", { month: 'long' }) } 

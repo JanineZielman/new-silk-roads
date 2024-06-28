@@ -1,5 +1,6 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
+import Collapsible from 'react-collapsible';
 
 /**
  * @typedef {import("@prismicio/client").Content.PeopleSlice} PeopleSlice
@@ -12,15 +13,16 @@ const People = ({ slice }) => (
   <section className='people-section'>
      {slice?.items?.map((item, i) => {
       return(
-        <a className='people' href={`mailto:${item.mail}`}>
+        <div className='people'>
           <div className='img-wrapper'>
             <img src={item.image.url}/>
             <div className='gradient'></div>
           </div>
           <div className='role'>{item.role}</div>
-          <h2>{item.name}</h2>
-          
-        </a>
+          <Collapsible trigger={item.name}>
+              <PrismicRichText field={item.bio}/>
+          </Collapsible>
+        </div>
       )
      })}
   </section>
