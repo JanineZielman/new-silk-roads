@@ -4,7 +4,7 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { PrismicRichText, PrismicLink } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import Collapsible from 'react-collapsible';
 import Link from "next/link";
 import { Portfolio } from "../components/Portfolio";
 
@@ -38,8 +38,10 @@ const Index = ({ settings, navigation, page, items}) => {
                     <PrismicRichText field={item.category.data.description}/>
                   </div>
                 </div>
-                <Portfolio items={items.filter((cat) => cat.data.categories.some((category) => category?.category?.uid == item.category.uid)).slice(0,3)}/>
-                <Link className="read-more-button" href={`/services/${item.category.uid}`}>More projects</Link>
+                <Collapsible trigger="Related projects">
+                  <Portfolio items={items.filter((cat) => cat.data.categories.some((category) => category?.category?.uid == item.category.uid)).slice(0,3)}/>
+                  <Link className="read-more-button" href={`/services/${item.category.uid}`}>More projects</Link>
+                </Collapsible>
               </div>
             )
           })}

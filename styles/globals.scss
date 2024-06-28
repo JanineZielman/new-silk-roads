@@ -559,7 +559,7 @@ footer{
   justify-content: space-between;
   flex-wrap: wrap;
   .service-item{
-    width: 23%;
+    width: 31%;
     margin-top: 5%;
     img{
       width: 110%;
@@ -602,5 +602,19 @@ footer{
       height: auto;
       margin: -20% -10%;
     }
+  }
+}
+
+.Collapsible{
+  text-align: left;
+  span{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1.5px solid black;
+    padding-bottom: 5px;
+  }
+  .Collapsible__contentInner{
+    padding-bottom: 50px;
   }
 }
