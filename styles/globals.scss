@@ -528,10 +528,11 @@ footer{
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 48px;
+  position: relative;
   .people{
     width: 23.5%;
     margin-top: 24px;
-    position: relative;
+    // position: relative;
     .img-wrapper{
       position: relative;
       overflow: hidden;
@@ -542,14 +543,22 @@ footer{
       mix-blend-mode: multiply;
       display: block;
     }
-    .role{
+    h2{
       margin: 5px 0;
+    }
+    .role{
+      margin: 10px 0;
       font-size: 16px;
     }
-    .Collapsible{
-      span{
-        font-size: 36px;
-      }
+    &.active{
+      height: 200%; 
+    }
+    .bio{
+      width: 90vw;
+      position: absolute;
+      left: 0;
+      background-color: white;
+      visibility: hidden;
     }
   }
 }
