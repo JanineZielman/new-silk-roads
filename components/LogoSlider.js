@@ -21,14 +21,14 @@ export const LogoSlider = ({ logos }) => {
         <Slider {...settings}>
           {logos.items.map((item, i) => {
             return(
-              <div className='img-slide'>
+              <div className='img-slide' key={`img-slide${i}`}>
                 <img src={item.logo.url}/>
               </div>
             )
           })}
           {logos.items.map((item, i) => {
             return(
-              <div className='img-slide'>
+              <div className='img-slide' key={`img-slide2${i}`}>
                 <img src={item.logo.url}/>
               </div>
             )
