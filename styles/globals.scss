@@ -6,7 +6,9 @@
 $black: rgb(0,0,0);
 $white: rgb(255,255,255);
 $grey: rgb(195,195,195);
+
 $lblue: rgb(230,241,250);
+$lgreen: rgb(135,196,136);
 
 $pink: #d468c9d0;
 $orange: #fe8946d0;
@@ -15,6 +17,15 @@ $purple: #b595ffd0;
 $brown: #c6a67fd0;
 $red:#ff7765d0;
 $blue: #649dffd0;
+
+
+.color-green {
+  background-color: $lgreen;
+}
+
+.color-blue {
+  background-color: $lblue;
+}
 
 .gradient{
   position: absolute;
@@ -130,6 +141,7 @@ p a{
   text-decoration: underline;
 }
 
+
 body{
   margin: 0;
   padding: 0;
@@ -137,6 +149,7 @@ body{
   font-family: "Fakt Pro";
   font-size: 20px;
   font-weight: 300;
+  transition: background-color 1s ease;
 }
 
 .menu{

@@ -37,7 +37,7 @@ const People = ({ slice }) => {
   return(
     <>
     <div className='subtitle'>{slice.primary.title}</div>
-    <section className='people-section'>
+    <section className='people-section panel' data-color="blue">
        {chunks.map((chunk, chunkIndex) => (
         <React.Fragment key={`chunk${chunkIndex}`}>
           {chunk.map((item, itemIndex) => (

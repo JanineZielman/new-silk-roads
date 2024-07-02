@@ -6,7 +6,7 @@ export const ServicesPreview = ({
 }) => {
 
   return (
-    <div className="services-preview">
+    <div className="services-preview panel" data-color="green">
       {items.map((item, i) => { 
         return(
             <div className='service-item' key={`serviceitem${i}`}>

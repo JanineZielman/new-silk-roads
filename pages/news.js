@@ -16,7 +16,7 @@ const Index = ({ settings, navigation, items}) => {
         <meta property="og:description" content={settings.data.site_description[0].text} />
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
-      <div className="container">
+      <div className="container panel" data-color="blue">
         <h2 className="page-title">New Silk Roads latest news</h2>
         <br/>
         <News items={items}/>
