@@ -18,7 +18,21 @@ const LogoSlider = ({ slice }) => {
     slidesToScroll: 1,
     autoplay: true,
     cssEase: 'linear',
-    autoplaySpeed: 2500
+    autoplaySpeed: 2500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 8,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+    ]
   };
   return(
     <section className='logo-wrapper'>

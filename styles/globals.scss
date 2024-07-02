@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  text-rendering: optimizeLegibility; 
 }
 
 $black: rgb(0,0,0);
@@ -98,17 +99,18 @@ $blue: #649dffd0;
 
 @font-face {
   font-family: "Fakt Pro";
-  src: url("FaktPro-Reg.woff2") format("woff2");
+  src: url("FaktProNormal.otf") format("opentype");
+  font-weight: 300;
 }
 
 @font-face {
   font-family: "Fakt Pro";
-  src: url("FaktPro-Bold.woff2") format("woff2");
+  src: url("FaktProMedium.otf") format("opentype");
   font-weight: 700;
 }
 
 h2{
-  font-weight: 500;
+  font-weight: 300;
   font-size: 36px;
   line-height: 1.1;
 }
@@ -116,6 +118,7 @@ h2{
 p{
   font-size: 18px;
   line-height: 1.4;
+  font-weight: 300;
 }
 
 a{
@@ -133,6 +136,7 @@ body{
   background-color: $lblue;
   font-family: "Fakt Pro";
   font-size: 20px;
+  font-weight: 300;
 }
 
 .menu{
