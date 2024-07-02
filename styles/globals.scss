@@ -252,7 +252,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   .row{
     width: 31.5%;
   }
@@ -695,4 +695,33 @@ footer{
   height: auto;
   align-items: center;
   justify-content: center;
+}
+
+.popup{
+  position: fixed;
+  width: 600px;
+  max-width: 95%;
+  height: 81vh;
+  z-index: 999;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #eee;
+  border-radius: 25px;
+  padding: 20px;
+  -webkit-box-shadow: 10px 10px 25px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 25px -11px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 25px -11px rgba(0,0,0,0.75);
+  iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 25px;
+  }
+  .close{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 30px;
+  }
 }

@@ -216,6 +216,17 @@ interface NewsItemDocumentData {
      */
     image: prismicT.ImageField<never>;
     /**
+     * Summary field in *News Item*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.summary
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    summary: prismicT.RichTextField;
+    /**
      * Content field in *News Item*
      *
      * - **Field Type**: Rich Text

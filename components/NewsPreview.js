@@ -21,7 +21,7 @@ export const NewsPreview = ({
                   </div>
                 } 
                 <PrismicRichText field={item.data.title}/>
-                <p>{item.data.content[0].text}</p>
+                <PrismicRichText field={item.data.summary}/>
               </div>
             </div>
           </Link>
