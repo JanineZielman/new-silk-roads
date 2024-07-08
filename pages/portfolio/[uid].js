@@ -42,7 +42,7 @@ const Page = ({ settings, page, navigation }) => {
           <section className='text-section'>
             <div className='subtitle'>Partners</div>
 
-            <div className='description'>
+            <div className='description partners'>
               <p>
                 {page.data.partners.map((item, i) => {
                   return(
