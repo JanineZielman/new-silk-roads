@@ -7,7 +7,7 @@ export const NewsPreview = ({
 
   return (
 
-    <div className="news-preview panel" data-color="blue">
+    <div className="news-preview panel" data-color="green">
       {items.map((item, i) => { 
         return(
 
