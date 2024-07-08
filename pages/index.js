@@ -9,7 +9,6 @@ import { Portfolio } from "../components/Portfolio";
 import { NewsPreview } from "../components/NewsPreview";
 import { ServicesPreview } from "../components/ServicesPreview";
 import Link from "next/link";
-import Popup from "../components/Popup";
 import { LogoSlider } from "../components/LogoSlider";
 import TextSection from "../components/TextSection";
 
@@ -85,7 +84,6 @@ const Index = ({ page, settings, navigation, portfolio_items, news_items, servic
         })}
 
       </div>
-      <Popup/>
     </Layout>
   );logos
 };
