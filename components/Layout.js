@@ -38,6 +38,8 @@ export const Layout = ({
       });    
       
     }).scroll();
+
+    document.getElementById('main').classList.add("load");
   }, [])
 
   return (
@@ -59,7 +61,7 @@ export const Layout = ({
           })}
         </div>
       </header>
-      <main className="wrapper">
+      <main className="wrapper" id="main">
         {children}
       </main>
       <footer>
