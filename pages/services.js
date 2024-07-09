@@ -20,7 +20,7 @@ const Index = ({ settings, navigation, page}) => {
       <div className="container">
         <h2 className="page-title">{page.data.title}</h2>
 
-        <div className="services panel" data-color="blue">
+        <div className="services">
           {page.data.services.map((item, i) => {
             return(
               <div className="preview" key={`service${i}`}>

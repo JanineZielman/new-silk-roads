@@ -2,7 +2,7 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 
 const TextSection = ({ slice }) => (
-  <section className='text-section panel' data-color="blue">
+  <section className='text-section'>
 
       <div className='subtitle'>{slice.primary.title}</div>
 
