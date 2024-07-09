@@ -29,7 +29,7 @@ export const LogoSlider = ({ logos }) => {
     ]
   };
   return(
-    <section className='logo-wrapper panel' data-color="green">
+    <section className='logo-wrapper panel' data-color="blue">
       <div className='subtitle'>{logos.primary.title}</div>
       <div className='logo-slider'>
         <Slider {...settings}>

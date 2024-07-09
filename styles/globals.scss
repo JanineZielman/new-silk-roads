@@ -39,19 +39,14 @@ $blue: #649dffd0;
 }
 
 
-.color-green {
-  --myColor1: $lgreen;
-  --myColor2: $white;
-  transition: --myColor1 0.5s, --myColor2 0.5s;
-  background: linear-gradient(180deg, var(--myColor1) 0%, var(--myColor2) 100%);
+.color-blue {
+  background-position-y: 0vh;
 }
 
-.color-blue {
-  --myColor1: $white;
-  --myColor2: $lblue;
-  transition: --myColor1 0.5s, --myColor2 0.5s;
-  background: linear-gradient(180deg, var(--myColor1) 0%, var(--myColor2) 100%);
+.color-green {
+  background-position-y: 400vh;
 }
+
 
 .gradient{
   position: absolute;
@@ -176,11 +171,12 @@ body{
   font-family: "Fakt Pro";
   font-size: 20px;
   font-weight: 300;
-  // transition: all 1s ease;
-  background: linear-gradient(180deg, var(--myColor1) 0%, var(--myColor2) 100%);
-  transition: --myColor1 0.5s, --myColor2 0.5s;
-  background-attachment: fixed;
+  transition: background-position 1s ease;
+  background: linear-gradient(180deg, $lblue, $lblue, $lblue, $lgreen, $white, $lblue, $lblue, $lblue);
+	background-size: 100vw 800vh;
+  background-position-y: 0;
 }
+
 
 .menu{
   display: flex;
