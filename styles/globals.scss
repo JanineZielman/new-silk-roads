@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
   text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
 }
 
 $black: rgb(0,0,0);
@@ -112,18 +113,18 @@ $blue: #649dffd0;
 
 @font-face {
   font-family: "Fakt Pro";
-  src: url("FaktProNormal.otf") format("opentype");
-  font-weight: 300;
+  src: url("./FaktPro-Normal.otf") format("opentype");
+  // font-weight: 400;
 }
 
 @font-face {
   font-family: "Fakt Pro";
-  src: url("FaktProMedium.otf") format("opentype");
-  font-weight: 700;
+  src: url("./FaktPro-SemiBold.otf") format("opentype");
+  font-weight: bold;
 }
 
 h2{
-  font-weight: 300;
+  font-weight: 400;
   font-size: 36px;
   line-height: 1.1;
 }
@@ -131,7 +132,7 @@ h2{
 p{
   font-size: 18px;
   line-height: 1.4;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a{
@@ -150,7 +151,7 @@ body{
   background-color: $lblue;
   font-family: "Fakt Pro";
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   background: linear-gradient(180deg, $lblue 0%, $lblue 80%, $lgreen 100%);
   background-size: cover;
 }
@@ -225,7 +226,7 @@ body{
       font-size: 60px;
       animation: move 6s linear infinite;
       white-space: nowrap;
-      font-weight: 300;
+      font-weight: 400;
     }
   }
   .images{
