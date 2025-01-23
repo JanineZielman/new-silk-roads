@@ -32,7 +32,14 @@ export async function getStaticProps({ previewData }) {
 
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
-  const items = await client.getAllByType("news_item");
+  const items = await client.getAllByType("news_item", {
+    orderings: [
+      {
+        field: 'my.news_item.date',
+        direction: 'desc',
+      },
+    ]
+  });
 
   return {
     props: {

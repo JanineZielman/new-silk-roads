@@ -407,6 +407,17 @@ interface ProjectDocumentData {
      */
     image: prismicT.ImageField<"full">;
     /**
+     * Date field in *Project*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
      * Services field in *Project*
      *
      * - **Field Type**: Group

@@ -96,8 +96,22 @@ export async function getStaticProps({ previewData }) {
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
   const page = await client.getSingle("home");
-  const portfolio_items = await client.getAllByType("project");
-  const news_items = await client.getAllByType("news_item");
+  const portfolio_items = await client.getAllByType("project", {
+    orderings: [
+      {
+        field: 'my.project.date',
+        direction: 'desc',
+      },
+    ]
+  });
+  const news_items = await client.getAllByType("news_item", {
+    orderings: [
+      {
+        field: 'my.news_item.date',
+        direction: 'desc',
+      },
+    ]
+  });
   const services = await client.getSingle("services", {
     fetchLinks: 'category.title, category.image, category.description'
   });

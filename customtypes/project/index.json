@@ -46,6 +46,13 @@
           ]
         }
       },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date",
+          "placeholder": ""
+        }
+      },
       "categories": {
         "type": "Group",
         "config": {

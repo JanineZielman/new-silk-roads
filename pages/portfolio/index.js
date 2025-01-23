@@ -77,7 +77,14 @@ export async function getStaticProps({ previewData }) {
 
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
-  const items = await client.getAllByType("project");
+  const items = await client.getAllByType("project", {
+    orderings: [
+      {
+        field: 'my.project.date',
+        direction: 'desc',
+      },
+    ]
+  });
   const categories = await client.getAllByType("category");
 
   return {
