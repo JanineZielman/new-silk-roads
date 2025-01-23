@@ -14,6 +14,8 @@ import TextSection from "../components/TextSection";
 
 const Index = ({ page, settings, navigation, portfolio_items, news_items, services}) => {
 
+  console.log(portfolio_items)
+
   var sliderSettings = {
     dots: false,
     infinite: true,
@@ -63,7 +65,11 @@ const Index = ({ page, settings, navigation, portfolio_items, news_items, servic
                   <Link className="read-more-button" href={`/${item.primary.page.uid}`}>Explore our {item.primary.page.uid}</Link>
                 </div>
                 {item.primary.page.uid == 'portfolio' &&
-                  <Portfolio items={portfolio_items.slice(0,6)}/>
+                  <Portfolio
+                  items={portfolio_items
+                    .sort((a, b) => a.uid.localeCompare(b.uid)) // Sort alphabetically by uid
+                    .slice(0, 6)} // Take the first 6 items
+                />
                 }
                 {item.primary.page.uid == 'news' &&
                   <NewsPreview items={news_items.slice(0,3)}/>
@@ -96,14 +102,7 @@ export async function getStaticProps({ previewData }) {
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
   const page = await client.getSingle("home");
-  const portfolio_items = await client.getAllByType("project", {
-    orderings: [
-      {
-        field: 'my.project.date',
-        direction: 'desc',
-      },
-    ]
-  });
+  const portfolio_items = await client.getAllByType("project");
   const news_items = await client.getAllByType("news_item", {
     orderings: [
       {

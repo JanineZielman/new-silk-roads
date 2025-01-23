@@ -12,6 +12,21 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" defer/>
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" defer/>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-GTD8C8HK6W"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-GTD8C8HK6W', { 'anonymize_ip': true });
+              `,
+            }}
+          />
+
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />
