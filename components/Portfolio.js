@@ -6,7 +6,7 @@ export const Portfolio = ({
 
   return (
 
-      <div className="grid">
+      <div className="grid portfolio-grid">
         <div className="row">
           {items.map((item, i) => { 
             let categories = item.data.categories

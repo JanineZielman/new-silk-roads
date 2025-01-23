@@ -1,10 +1,7 @@
 import Head from "next/head";
-import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/Layout";
-import { PrismicRichText, PrismicLink } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import { Portfolio } from "../../components/Portfolio";
 import React, { useEffect } from "react";
 
@@ -62,7 +59,7 @@ const Index = ({ settings, navigation, items, categories}) => {
             )
           })}
         </div>
-        <div className="masonry">
+        <div className="masonry portfolio-grid">
           <Portfolio items={items}/>
         </div>
       </div>
