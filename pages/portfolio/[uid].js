@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const Page = ({ settings, page, navigation }) => {
   let categories = page.data.categories
-  console.log(page)
+
   return (
     <Layout navigation={navigation}>
       <Head>

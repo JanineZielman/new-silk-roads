@@ -10,7 +10,6 @@ export const Layout = ({
 
   useEffect(() => {
     document.getElementById('main').classList.add("load");
-    console.log(router.asPath)
   }, [])
 
   return (

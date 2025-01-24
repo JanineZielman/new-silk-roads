@@ -8,7 +8,6 @@ import Slider from "react-slick";
  * @param { LogoSliderProps }
  */
 const LogoSlider = ({ slice }) => {
-  console.log(slice)
   var settings = {
     dots: false,
     arrows: false,

@@ -4,7 +4,6 @@ import Link from "next/link";
 export const PortfolioItem = ({
   item, categories
 }) => {
-  console.log(item.data.gradient)
   return (
     <Link href={`/portfolio/${item.uid}`}>
       <div className={`grid-item ${categories.map((item, i) => item.category.uid).join(' ')}`}>

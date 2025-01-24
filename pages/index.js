@@ -14,8 +14,6 @@ import TextSection from "../components/TextSection";
 
 const Index = ({ page, settings, navigation, portfolio_items, news_items, services}) => {
 
-  console.log(portfolio_items)
-
   var sliderSettings = {
     dots: false,
     infinite: true,
