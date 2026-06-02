@@ -24,36 +24,38 @@ const Page = ({ settings, page, navigation }) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className='project'>
-      <div className={`hero page-hero ${page.data.image.url ? 'has-img' : 'no-img'}`}>
-        <img src={page.data.image.full ? page.data.image.full.url : page.data.image.url }/>
-        {(page.data.gradient == true || !page.data.image.url) &&<div className={`gradient ${page.data.color} ${page.data.image.url ? 'img' : ''}`}></div>}
-      </div>
-      <div className="content-right">
+        <div className={`hero page-hero ${page.data.image.url ? 'has-img' : 'no-img'}`}>
+          <img src={page.data.image.full ? page.data.image.full.url : page.data.image.url} />
+          {(page.data.gradient == true || !page.data.image.url) && <div className={`gradient ${page.data.color} ${page.data.image.url ? 'img' : ''}`}></div>}
+        </div>
+        <div className="content-right">
           <div className="categories">
             {categories.map((item, i) => {
-              return(
-                <div className="category" key={`category${i}`}><Link href={`/services/${item.category.uid}`}>{item.category.uid.replaceAll('-', ' ')}</Link></div>
+              return (
+                <div className="category" key={`category${i}`}><Link href={`/services/${item.category.uid}`}>{item.category.uid?.replaceAll('-', ' ')}</Link></div>
               )
             })}
           </div>
-          <PrismicRichText field={page.data.title}/>
-          <PrismicRichText field={page.data.description}/>
+          <PrismicRichText field={page.data.title} />
+          <PrismicRichText field={page.data.description} />
           <SliceZone slices={page.data.slices} components={components} />
           <section className='text-section'>
             <div className='subtitle'>Partners</div>
 
-            <div className='description partners'>
-              <p>
-                {page.data.partners.map((item, i) => {
-                  return(
-                    <Link key={`partner${i}`} href={`/partners/${item.partner.uid}`}>{item.partner.uid}</Link>
-                  )
-                })}
-              </p>
-            </div>
+            {page.data.partners?.length > 0 &&
+              <div className='description partners'>
+                <p>
+                  {page.data.partners.map((item, i) => {
+                    return (
+                      <Link key={`partner${i}`} href={`/partners/${item.partner.uid}`}>{item.partner.uid}</Link>
+                    )
+                  })}
+                </p>
+              </div>
+            }
           </section>
         </div>
-      </div>    
+      </div>
     </Layout>
   );
 };
